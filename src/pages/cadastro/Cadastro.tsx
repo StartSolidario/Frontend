@@ -62,7 +62,6 @@ function Cadastro() {
             alert('Usuário cadastrado com sucesso')
 
          } catch (error) {
-            console.log(usuario.idade);
             alert('Erro ao cadastrar o Usuário')
          }
 
