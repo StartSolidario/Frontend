@@ -2,7 +2,7 @@ function Home() {
   return (
     <>
     <div className="bg-gradient-to-l from-[#C2E0CA] via-[#F5F4D6] to-[#C2E0CA] p-6 "> {/*Body*/}
-        <div className="flex justify-center grid grid-cols-2 "> {/*Sessão sobre*/}
+        <div className="justify-center grid grid-cols-2 "> {/*Sessão sobre*/}
             <div> {/*Sobre - Texto*/}
                 <h1 className="font-bold text-center text-2xl p-6"> O que é o Start Solidário? </h1>
                 <h3 className="text-center"> O Start Solidário é muito mais que um e-commerce, é um movimento que une solidariedade e propósito. 
@@ -16,16 +16,14 @@ function Home() {
 
             </div>
 
-            <div className=" mx-auto mx-5 w-2/3 border-current border-2 rounded"> {/*Sobre - Imagem*/}
-                   
+            <div className=" mx-auto w-2/3 border-current border-2 rounded"> {/*Sobre - Imagem*/}
                 <img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/feche-pessoas-sorridentes.jpg?updatedAt=1724778221364"></img>
             </div>
         </div>
         
-        <div className=" flex justify-center grid grid-cols-2 "> {/*Sessão ajuda*/}
+        <div className="justify-center grid grid-cols-2 "> {/*Sessão ajuda*/}
             <div> {/*ajuda - Imagem*/}
-                <img className="mx-auto flex flex-col md:flex-row items-center border-current border-2 rounded" src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/pessoas-felizes-se-oferecendo-para-causas-especiais_23-2148687314.png">
-                </img>
+                <img className="mx-auto flex flex-col md:flex-row items-center border-current border-2 rounded" src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/pessoas-felizes-se-oferecendo-para-causas-especiais_23-2148687314.png" />
             </div>
             
             <div className="flex-1"> {/*ajuda - Texto*/}
