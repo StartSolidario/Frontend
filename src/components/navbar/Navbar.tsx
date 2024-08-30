@@ -17,7 +17,7 @@ function Navbar() {
             </div>
 
             <div className="w-1/3 flex justify-end px-8 text-3xl">
-               <Link to={'/login'}><p>Login</p></Link>
+               <Link to={'/login'}>Login</Link>
             </div>
          </div>
       </>

@@ -1,18 +1,18 @@
 function Home() {
   return (
     <>
-    <div className="bg-gradient-to-l from-[#C2E0CA] via-[#F5F4D6] to-[#C2E0CA] p-6 "> {/*Body*/}
-        <div className="justify-center grid grid-cols-2 "> {/*Sessão sobre*/}
+    <div className="bg-gradient-to-l from-[#C2E0CA] via-[#F5F4D6] to-[#C2E0CA] p-6 min-h-screen flex flex-col items-center"> {/*Body*/}
+        <div className="flex flex-col lg:flex-row items-center justify-center w-full my-8"> {/*Sessão sobre*/}
             <div> {/*Sobre - Texto*/}
-                <h1 className="font-bold text-center text-2xl p-6"> O que é o Start Solidário? </h1>
-                <h3 className="text-center"> O Start Solidário é muito mais que um e-commerce, é um movimento que une solidariedade e propósito. 
+                <h1 className="font-bold text-4xl text-center lg:text-left mb-4"> O que é o Start Solidário? </h1>
+                <p className="text-center"> O Start Solidário é muito mais que um e-commerce, é um movimento que une solidariedade e propósito. 
                     Nossa plataforma conecta quem quer ajudar com quem mais precisa, 
                     oferecendo a oportunidade de transformar vidas através de doações, voluntariado e compras com significado.
                     <br />Aqui, você não apenas adquire produtos ou pacotes de viagem, você participa de algo maior. 
                     Cada compra e cada gesto de doação reverberam em impacto social, apoiando causas que fazem a diferença na vida de muitas pessoas. 
                     Seja comprando para si ou doando para os outros, você está investindo em um futuro mais justo e inclusivo. <br />
                     Nosso propósito é criar um ambiente onde a solidariedade seja acessível e tangível, permitindo que todos possam contribuir com o que têm de melhor: 
-                    seu tempo, recursos ou disposição para ajudar. Faça parte dessa corrente do bem e descubra como pequenas ações podem gerar grandes mudanças.</h3>
+                    seu tempo, recursos ou disposição para ajudar. Faça parte dessa corrente do bem e descubra como pequenas ações podem gerar grandes mudanças.</p>
 
             </div>
 
