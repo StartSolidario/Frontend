@@ -12,7 +12,7 @@ function Navbar() {
                <ul className="flex">
                   <li><Link to={'/voluntariado'} className="px-5 text-3xl">Voluntariado</Link></li>
                   <li><Link to={'/comprar'} className="px-5 text-3xl">Comprar</Link></li>
-                  <li><Link to={'/contato'} className="px-5 text-3xl">Contato</Link></li>
+                  <li><Link to={'/sobre'} className="px-5 text-3xl">Sobre nós</Link></li>
                </ul>
             </div>
 
