@@ -20,24 +20,25 @@ function Navbar() {
    if (usuario.token !== "" && usuario.tipo !== "") {
       component = (
          <div className="w-full flex justify-around items-center bg-[#2B4042] text-[#F5F4D6] py-3">
-            <div className="w-1/3 flex justify-start">
+            <div className="flex justify-start">
                <Link to={'/'}><img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida-with-text-double-font.png?updatedAt=1724785507618" alt="Logo do Start Solidário" style={{ width: '225px' }} /></Link>
             </div>
 
-            <div className="w-1/3 flex justify-center px-8">
-               <ul className="flex">
-                  <li><Link to={'/voluntariado'} className="px-5 text-3xl">Voluntariado</Link></li>
-                  <li><Link to={'/comprar'} className="px-5 text-3xl">Comprar</Link></li>
-                  <li><Link to={'/sobre'} className="px-5 text-3xl">Sobre nós</Link></li>
+            <div className="flex justify-center items-center">
+               <ul className="flex justify-center items-center">
+                  <li><Link to={'/voluntariado'} className="px-2 text-2xl hover:underline">Voluntariado</Link></li>
+                  <li><Link to={'/comprar'} className="px-2 text-2xl hover:underline">Comprar</Link></li>
+                  <li><Link to={'/sobre'} className="px-2 text-2xl hover:underline">Sobre nós</Link></li>
                </ul>
             </div>
 
-            <div className="w-1/3 flex justify-end px-8 text-3xl">
-               <Link to={'/login'} className="px-5 text-3xl">M-Produto</Link>
-               <Link to={'/categorias_adm'} className="px-5 text-3xl">M-Categoria</Link>
-               <p onClick={logout} className="px-5 text-3xl">Sair</p>
+            <div className="flex justify-end items-center text-3xl">
+               <Link to={'/login'} className="px-2 text-2xl hover:underline">M-Produto</Link>
+               <Link to={'/categorias_adm'} className="px-2 text-2xl hover:underline">M-Categoria</Link>
+               <button onClick={logout} className="px-2 text-2xl hover:underline">Sair</button>
             </div>
          </div>)
+
    } else if (usuario.token !== "" && usuario.tipo == "") {
       component = (
          <div className="w-full flex justify-around items-center bg-[#2B4042] text-[#F5F4D6] py-3">
@@ -45,19 +46,20 @@ function Navbar() {
                <Link to={'/'}><img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida-with-text-double-font.png?updatedAt=1724785507618" alt="Logo do Start Solidário" style={{ width: '225px' }} /></Link>
             </div>
 
-            <div className="flex justify-center px-8">
+            <div className="flex justify-center items-center">
                <ul className="flex">
-                  <li><Link to={'/voluntariado'} className="px-5 text-3xl">Voluntariado</Link></li>
-                  <li><Link to={'/comprar'} className="px-5 text-3xl">Comprar</Link></li>
-                  <li><Link to={'/sobre'} className="px-5 text-3xl">Sobre nós</Link></li>
+                  <li><Link to={'/voluntariado'} className="px-2 text-2xl hover:underline">Voluntariado</Link></li>
+                  <li><Link to={'/comprar'} className="px-2 text-2xl hover:underline">Comprar</Link></li>
+                  <li><Link to={'/sobre'} className="px-2 text-2xl hover:underline">Sobre nós</Link></li>
                </ul>
             </div>
 
-            <div className="flex justify-end px-8 text-3xl">
-               <p onClick={logout} className="px-5 text-3xl">Sair</p>
+            <div className="flex justify-end items-center text-2xl">
+               <button onClick={logout}>Sair</button>
             </div>
          </div>
       )
+      
    } else {
       component = (
          <div className="w-full flex justify-around items-center bg-[#2B4042] text-[#F5F4D6] py-3">
@@ -65,15 +67,15 @@ function Navbar() {
                <Link to={'/'}><img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida-with-text-double-font.png?updatedAt=1724785507618" alt="Logo do Start Solidário" style={{ width: '225px' }} /></Link>
             </div>
 
-            <div className="flex justify-center px-8">
+            <div className="flex justify-center items-center">
                <ul className="flex">
-                  <li><Link to={'/voluntariado'} className="px-5 text-3xl">Voluntariado</Link></li>
-                  <li><Link to={'/comprar'} className="px-5 text-3xl">Comprar</Link></li>
-                  <li><Link to={'/sobre'} className="px-5 text-3xl">Sobre nós</Link></li>
+                  <li><Link to={'/voluntariado'} className="px-2 text-2xl hover:underline">Voluntariado</Link></li>
+                  <li><Link to={'/comprar'} className="px-2 text-2xl hover:underline">Comprar</Link></li>
+                  <li><Link to={'/sobre'} className="px-2 text-2xl hover:underline">Sobre nós</Link></li>
                </ul>
             </div>
 
-            <div className="flex justify-end px-8 text-3xl">
+            <div className="flex justify-end items-center text-2xl">
                <Link to={'/login'}>Login</Link>
             </div>
          </div>
