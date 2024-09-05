@@ -72,6 +72,7 @@ function Cadastro() {
       }
    }
 
+   //Criar novo adm
    const [contador, setContador] = useState<number>(0)
 
    function AumentaContador() {
@@ -80,22 +81,24 @@ function Cadastro() {
 
    let input_adm: ReactNode;
 
-   if (contador >= 3) {
-      input_adm = (
-         <div className="flex flex-col w-full px-4 py-2">
-         <label htmlFor="tipo" className='px-1 text-lg'>Administrador:</label>
-         <input
-            type="text"
-            id="tipo"
-            name="tipo"
-            placeholder="ADM"
-            className="rounded-xl p-2 text-black"
-            value={usuario.tipo}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-         />
-      </div>
-      )
-   }
+   useEffect(() => {
+      if (contador >= 3) {
+         input_adm = (
+            <div className="flex flex-col w-full px-4 py-2">
+               <label htmlFor="tipo" className='px-1 text-lg'>Administrador:</label>
+               <input
+                  type="text"
+                  id="tipo"
+                  name="tipo"
+                  placeholder="Vazio para comum"
+                  className="rounded-xl p-2 text-black"
+                  value={usuario.tipo}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+               />
+            </div>
+         )
+      }
+   }, [contador])
 
    return (
       <div className='flex justify-center justify-items-center bg-[#F5F4D6] py-[10Vh]'>
@@ -133,7 +136,7 @@ function Cadastro() {
                      />
                   </div>
 
-                  { input_adm }
+                  {input_adm}
 
                   <div className="flex flex-col w-full px-4 py-2">
                      <label htmlFor="idade" className='px-1 text-lg'>Data de Nascimento:</label>

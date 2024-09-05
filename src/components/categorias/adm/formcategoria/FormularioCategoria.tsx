@@ -36,6 +36,7 @@ function FormularioCategoria() {
             navigate('/')
         }
     }, [token])
+    
     useEffect(() => {
         if (id !== undefined) {
             buscarPorId(id)
@@ -50,7 +51,7 @@ function FormularioCategoria() {
     }
 
     function retornar() {
-        navigate('/categorias_ADM')
+        navigate('/categorias_adm')
     }
 
     async function gerarNovaCategoria(e: ChangeEvent<HTMLFormElement>) {
@@ -102,11 +103,11 @@ function FormularioCategoria() {
                 onSubmit={gerarNovaCategoria}
             >
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="descricao">Descrição do Categoria</label>
+                    <label htmlFor="tipo">Descrição do Categoria</label>
                     <input
                         type="text"
-                        placeholder="Descreva aqui seu Categoria"
-                        name='descricao'
+                        placeholder="Descreva aqui sua Categoria"
+                        name='tipo'
                         className="border-2 border-slate-700 p-2 rounded"
                         value={categoria.tipo}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}

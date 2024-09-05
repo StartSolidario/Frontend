@@ -44,7 +44,7 @@ function DeletarCategoria() {
     }, [id])
 
     function retornar() {
-        navigate('/categorias_ADM/')
+        navigate('/categorias_adm/')
     }
 
     /**
