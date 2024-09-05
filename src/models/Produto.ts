@@ -1,7 +1,6 @@
 import Categoria from "./Categoria"
-import Usuario from "./Usuario"
 
-export default interface Postagem{
+export default interface Produto{
     id: number;
     nome: string;
     tamanho: string;
@@ -10,5 +9,4 @@ export default interface Postagem{
     quantidade: number;
     foto: string;
     categoria: Categoria | null;
-    usuario: Usuario | null;
 }

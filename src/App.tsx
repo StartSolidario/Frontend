@@ -1,11 +1,20 @@
 import { AuthProvider } from "./contexts/AuthContext"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+
 import Navbar from "./components/navbar/Navbar"
-import Footer from "./components/footer/Footer"
 import Home from "./pages/home/Home"
+import Footer from "./components/footer/Footer"
+
 import Login from "./pages/login/Login"
 import Cadastro from "./pages/cadastro/Cadastro"
 import Sobre from "./pages/sobre/Sobre"
+
+import ListarCategoria from "./components/categorias/adm/listarcategorias/ListarCategoria"
+import FormularioCategoria from "./components/categorias/adm/formcategoria/FormularioCategoria"
+import DeletarCategoria from "./components/categorias/adm/deletarcategoria/DeletarCategoria"
+
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from "react-toastify"
 
 function App() {
    //Codigo Typescript
@@ -13,21 +22,26 @@ function App() {
    return (
       //Codigo TSX => HTML + CSS
       <> {/*Fragmento -- div fantasma*/}
-      <AuthProvider>
-         <BrowserRouter>
-            <Navbar />
-            <div className="min-h-[80vh]">
-               <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/home" element={<Home />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/cadastro" element={<Cadastro />} />
-                  <Route path="/sobre" element={<Sobre />} />
-               </Routes>
-            </div>
-            <Footer />
-         </BrowserRouter>
-      </AuthProvider>
+         <AuthProvider>
+            <ToastContainer />
+            <BrowserRouter>
+               <Navbar />
+               <div className="min-h-[80vh]">
+                  <Routes>
+                     <Route path="/" element={<Home />} />
+                     <Route path="/home" element={<Home />} />
+                     <Route path="/login" element={<Login />} />
+                     <Route path="/cadastro" element={<Cadastro />} />
+                     <Route path="/sobre" element={<Sobre />} />
+                     <Route path="/categorias_adm" element={<ListarCategoria />} />
+                     <Route path="/cadastrocategoria_adm" element={<FormularioCategoria />} />
+                     <Route path="/editarcategoria_adm/:id" element={<FormularioCategoria />} />
+                     <Route path="/deletarcategoria_adm/:id" element={<DeletarCategoria />} />
+                  </Routes>
+               </div>
+               <Footer />
+            </BrowserRouter>
+         </AuthProvider>
       </>
    )
 }

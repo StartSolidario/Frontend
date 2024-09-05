@@ -1,7 +1,7 @@
 import Produto from "./Produto"
 
 
-export default interface Tema{
+export default interface Categoria{
     id: number;
     tipo: string;
     produto?: Produto | null;
