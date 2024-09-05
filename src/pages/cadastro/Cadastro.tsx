@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react"
+import { ChangeEvent, ReactNode, useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import Usuario from "../../models/Usuario"
 import { cadastrarUsuario } from "../../services/service"
@@ -72,11 +72,39 @@ function Cadastro() {
       }
    }
 
+   const [contador, setContador] = useState<number>(0)
+
+   function AumentaContador() {
+      setContador(contador + 1)
+   }
+
+   let input_adm: ReactNode;
+
+   if (contador >= 3) {
+      input_adm = (
+         <div className="flex flex-col w-full px-4 py-2">
+         <label htmlFor="tipo" className='px-1 text-lg'>Administrador:</label>
+         <input
+            type="text"
+            id="tipo"
+            name="tipo"
+            placeholder="ADM"
+            className="rounded-xl p-2 text-black"
+            value={usuario.tipo}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+         />
+      </div>
+      )
+   }
+
    return (
       <div className='flex justify-center justify-items-center bg-[#F5F4D6] py-[10Vh]'>
          <div className='flex rounded-3xl border-2 border-black w-2/5 m-auto'>
-            <div className='w-full'>
-               <form onSubmit={cadastrarNovoUsuario} className="w-full h-full rounded-3xl bg-[#1E765A] text-[#F5F4D6]" >
+            <div className='flex flex-col w-full rounded-3xl bg-[#1E765A]'>
+               <div className="flex justify-center w-full h-[20%]">
+                  <img onClick={AumentaContador} className="w-[150px]" src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida.png?updatedAt=1724784792101" />
+               </div>
+               <form onSubmit={cadastrarNovoUsuario} className="w-full h-full  text-[#F5F4D6]" >
                   <h2 className="text-3xl flex justify-center justify-items-center py-4">Crie sua conta:</h2>
 
                   <div className="flex flex-col w-full px-4 py-2">
@@ -100,10 +128,12 @@ function Cadastro() {
                         name="usuario"
                         placeholder="Usuario"
                         className="rounded-xl p-2 text-black"
-                        value={usuario.usuario} 
+                        value={usuario.usuario}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                      />
                   </div>
+
+                  { input_adm }
 
                   <div className="flex flex-col w-full px-4 py-2">
                      <label htmlFor="idade" className='px-1 text-lg'>Data de Nascimento:</label>
@@ -112,7 +142,7 @@ function Cadastro() {
                         id="idade"
                         name="idade"
                         className="rounded-xl p-2 text-black"
-                        value={usuario.idade} 
+                        value={usuario.idade}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                      />
                   </div>
@@ -125,7 +155,7 @@ function Cadastro() {
                         name="cpf"
                         placeholder="XXX.XXX.XXX-XX"
                         className="rounded-xl p-2 text-black"
-                        value={usuario.cpf} 
+                        value={usuario.cpf}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                      />
                   </div>
@@ -138,7 +168,7 @@ function Cadastro() {
                         name="foto"
                         placeholder="Link"
                         className="rounded-xl p-2 text-black"
-                        value={usuario.foto} 
+                        value={usuario.foto}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                      />
                   </div>
@@ -151,7 +181,7 @@ function Cadastro() {
                         name="senha"
                         placeholder="Senha"
                         className="rounded-xl p-2 text-black"
-                        value={usuario.senha} 
+                        value={usuario.senha}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                      />
                   </div>
