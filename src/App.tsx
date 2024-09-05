@@ -7,6 +7,8 @@ import Footer from "./components/footer/Footer"
 
 import Login from "./pages/login/Login"
 import Cadastro from "./pages/cadastro/Cadastro"
+import CadastroAdm from "./pages/cadastro/CadastroAdm"
+
 import Sobre from "./pages/sobre/Sobre"
 
 import ListarCategoria from "./components/categorias/adm/listarcategorias/ListarCategoria"
@@ -32,7 +34,10 @@ function App() {
                      <Route path="/home" element={<Home />} />
                      <Route path="/login" element={<Login />} />
                      <Route path="/cadastro" element={<Cadastro />} />
+                     <Route path="/cadastro_adm" element={<CadastroAdm />} />
+
                      <Route path="/sobre" element={<Sobre />} />
+                     
                      <Route path="/categorias_adm" element={<ListarCategoria />} />
                      <Route path="/cadastrocategoria_adm" element={<FormularioCategoria />} />
                      <Route path="/editarcategoria_adm/:id" element={<FormularioCategoria />} />

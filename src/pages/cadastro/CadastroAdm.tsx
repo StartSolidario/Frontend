@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import Usuario from "../../models/Usuario"
 import { cadastrarUsuario } from "../../services/service"
 
-function Cadastro() {
+function CadastroAdm() {
 
    let navigate = useNavigate()
 
@@ -72,7 +72,7 @@ function Cadastro() {
       }
    }
 
-   //Criar novo adm
+   //Sair Criar novo adm
    const [contador, setContador] = useState<number>(0)
 
    function AumentaContador() {
@@ -81,7 +81,7 @@ function Cadastro() {
 
    useEffect(() => {
       if (contador >= 3) {
-         navigate('/cadastro_adm')
+         navigate('/cadastro')
       }
    }, [contador])
 
@@ -117,6 +117,19 @@ function Cadastro() {
                         placeholder="Usuario"
                         className="rounded-xl p-2 text-black"
                         value={usuario.usuario}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                     />
+                  </div>
+
+                  <div className="flex flex-col w-full px-4 py-2">
+                     <label htmlFor="usuario" className='px-1 text-lg'>Tipo:</label>
+                     <input
+                        type="text"
+                        id="tipo"
+                        name="tipo"
+                        placeholder="Administrador"
+                        className="rounded-xl p-2 text-black"
+                        value={usuario.tipo}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                      />
                   </div>
@@ -200,4 +213,4 @@ function Cadastro() {
    )
 }
 
-export default Cadastro
+export default CadastroAdm
