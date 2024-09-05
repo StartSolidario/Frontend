@@ -43,28 +43,30 @@ function ListarCategorias() {
 
     return (
         <>
-            <div className="w-full flex justify-center">
-                <Link className="" to={'/cadastrocategoria_adm'}>Adicionar Categoria</Link>
-            </div>
+            <div className="flex flex-col h-[80vh] bg-[#F5F4D6]">
+                <div className="w-full flex justify-center">
+                    <Link className="my-4 py-4 px-4" to={'/cadastrocategoria_adm'}>Adicionar Categoria</Link>
+                </div>
 
-            {categorias.length === 0 && (
-                <DNA
-                    visible={true}
-                    height="200"
-                    width="200"
-                    ariaLabel="dna-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="dna-wrapper mx-auto"
-                />
-            )}
+                {categorias.length === 0 && (
+                    <DNA
+                        visible={true}
+                        height="200"
+                        width="200"
+                        ariaLabel="dna-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="dna-wrapper mx-auto"
+                    />
+                )}
 
-            <div className="bg-gray-200 flex justify-center">
-                <div className="my-4 container flex flex-col">
+                <div className="bg-gray-200 flex justify-center">
+                    <div className="my-4 container flex flex-col">
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {categorias.map((categoria) => (
-                            <CardCategorias key={categoria.id} categoria={categoria} />
-                        ))}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {categorias.map((categoria) => (
+                                <CardCategorias key={categoria.id} categoria={categoria} />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
