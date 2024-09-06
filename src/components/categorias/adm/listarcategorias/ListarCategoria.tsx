@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { DNA } from 'react-loader-spinner';
+import { Hourglass } from 'react-loader-spinner';
 import Categoria from "../../../../models/Categoria";
 import CardCategorias from "../cardcategorias/CardCategoria";
 import { buscar } from "../../../../services/service";
@@ -49,13 +49,14 @@ function ListarCategorias() {
                 </div>
 
                 {categorias.length === 0 && (
-                    <DNA
+                    <Hourglass
                         visible={true}
-                        height="200"
-                        width="200"
-                        ariaLabel="dna-loading"
+                        height="120"
+                        width="120"
+                        ariaLabel="hourglass-loading"
                         wrapperStyle={{}}
-                        wrapperClass="dna-wrapper mx-auto"
+                        wrapperClass="mx-auto my-8"
+                        colors={['#10b981', '#065f46']}
                     />
                 )}
 
