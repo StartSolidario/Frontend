@@ -15,6 +15,10 @@ import ListarCategoria from "./components/categorias/adm/listarcategorias/Listar
 import FormularioCategoria from "./components/categorias/adm/formcategoria/FormularioCategoria"
 import DeletarCategoria from "./components/categorias/adm/deletarcategoria/DeletarCategoria"
 
+import ListarProdutos from "./components/produtos/adm/listarprodutos/ListarProdutos"
+import FormularioProduto from "./components/produtos/adm/formproduto/FormularioProduto"
+import DeletarProduto from "./components/produtos/adm/deletarproduto/DeletarProduto"
+
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from "react-toastify"
 
@@ -42,6 +46,11 @@ function App() {
                      <Route path="/cadastrocategoria_adm" element={<FormularioCategoria />} />
                      <Route path="/editarcategoria_adm/:id" element={<FormularioCategoria />} />
                      <Route path="/deletarcategoria_adm/:id" element={<DeletarCategoria />} />
+
+                     <Route path="/produtos_adm" element={<ListarProdutos />} />
+                     <Route path="/produtocategoria_adm" element={<FormularioProduto />} />
+                     <Route path="/editarproduto_adm/:id" element={<FormularioProduto />} />
+                     <Route path="/deletarproduto_adm/:id" element={<DeletarProduto />} />
                   </Routes>
                </div>
                <Footer />
