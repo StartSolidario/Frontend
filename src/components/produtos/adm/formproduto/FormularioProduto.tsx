@@ -86,6 +86,7 @@ function FormularioProduto() {
       setProduto({
          ...produto,
          [e.target.name]: e.target.value,
+         [e.target.name]: e.target.name === "preco" ? parseFloat(e.target.value) : e.target.value,
          categoria: categoria
       });
    }
