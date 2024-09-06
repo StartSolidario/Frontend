@@ -20,19 +20,17 @@ function Navbar() {
    if (usuario.token !== "" && usuario.tipo !== "") {
       component = (
          <div className="w-full flex justify-around items-center bg-[#2B4042] text-[#F5F4D6] py-3">
-            <div className="flex justify-start">
+            <div className="flex justify-start items-center">
                <Link to={'/'}><img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida-with-text-double-font.png?updatedAt=1724785507618" alt="Logo do Start Solidário" style={{ width: '225px' }} /></Link>
             </div>
 
             <div className="flex justify-center items-center">
-               <ul className="flex justify-center items-center">
-                  <li><Link to={'/voluntariado'} className="px-2 text-2xl hover:underline">Voluntariado</Link></li>
-                  <li><Link to={'/comprar'} className="px-2 text-2xl hover:underline">Comprar</Link></li>
-                  <li><Link to={'/sobre'} className="px-2 text-2xl hover:underline">Sobre nós</Link></li>
-               </ul>
+               <Link to={'/voluntariado'} className="px-2 text-2xl hover:underline">Voluntariado</Link>
+               <Link to={'/comprar'} className="px-2 text-2xl hover:underline">Comprar</Link>
+               <Link to={'/sobre'} className="px-2 text-2xl hover:underline">Sobre nós</Link>
             </div>
 
-            <div className="flex justify-end items-center text-3xl">
+            <div className="flex justify-end items-center">
                <Link to={'/login'} className="px-2 text-2xl hover:underline">M-Produto</Link>
                <Link to={'/categorias_adm'} className="px-2 text-2xl hover:underline">M-Categoria</Link>
                <button onClick={logout} className="px-2 text-2xl hover:underline">Sair</button>
@@ -42,16 +40,14 @@ function Navbar() {
    } else if (usuario.token !== "" && usuario.tipo == "") {
       component = (
          <div className="w-full flex justify-around items-center bg-[#2B4042] text-[#F5F4D6] py-3">
-            <div className="flex justify-start">
+            <div className="flex justify-start items-center">
                <Link to={'/'}><img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida-with-text-double-font.png?updatedAt=1724785507618" alt="Logo do Start Solidário" style={{ width: '225px' }} /></Link>
             </div>
 
             <div className="flex justify-center items-center">
-               <ul className="flex">
-                  <li><Link to={'/voluntariado'} className="px-2 text-2xl hover:underline">Voluntariado</Link></li>
-                  <li><Link to={'/comprar'} className="px-2 text-2xl hover:underline">Comprar</Link></li>
-                  <li><Link to={'/sobre'} className="px-2 text-2xl hover:underline">Sobre nós</Link></li>
-               </ul>
+               <Link to={'/voluntariado'} className="px-2 text-2xl hover:underline">Voluntariado</Link>
+               <Link to={'/comprar'} className="px-2 text-2xl hover:underline">Comprar</Link>
+               <Link to={'/sobre'} className="px-2 text-2xl hover:underline">Sobre nós</Link>
             </div>
 
             <div className="flex justify-end items-center text-2xl">
@@ -59,20 +55,18 @@ function Navbar() {
             </div>
          </div>
       )
-      
+
    } else {
       component = (
          <div className="w-full flex justify-around items-center bg-[#2B4042] text-[#F5F4D6] py-3">
-            <div className="flex justify-start">
+            <div className="flex justify-start items-center">
                <Link to={'/'}><img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida-with-text-double-font.png?updatedAt=1724785507618" alt="Logo do Start Solidário" style={{ width: '225px' }} /></Link>
             </div>
 
             <div className="flex justify-center items-center">
-               <ul className="flex">
-                  <li><Link to={'/voluntariado'} className="px-2 text-2xl hover:underline">Voluntariado</Link></li>
-                  <li><Link to={'/comprar'} className="px-2 text-2xl hover:underline">Comprar</Link></li>
-                  <li><Link to={'/sobre'} className="px-2 text-2xl hover:underline">Sobre nós</Link></li>
-               </ul>
+               <Link to={'/voluntariado'} className="px-2 text-2xl hover:underline">Voluntariado</Link>
+               <Link to={'/comprar'} className="px-2 text-2xl hover:underline">Comprar</Link>
+               <Link to={'/sobre'} className="px-2 text-2xl hover:underline">Sobre nós</Link>
             </div>
 
             <div className="flex justify-end items-center text-2xl">
