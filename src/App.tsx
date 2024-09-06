@@ -21,6 +21,7 @@ import DeletarProduto from "./components/produtos/adm/deletarproduto/DeletarProd
 
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from "react-toastify"
+import EquipeContato from "./pages/equipecontato/EquipeContato"
 
 function App() {
    //Codigo Typescript
@@ -41,14 +42,15 @@ function App() {
                      <Route path="/cadastro_adm" element={<CadastroAdm />} />
 
                      <Route path="/sobre" element={<Sobre />} />
-                     
+                     <Route path="/contato" element={<EquipeContato />} />
+
                      <Route path="/categorias_adm" element={<ListarCategoria />} />
                      <Route path="/cadastrocategoria_adm" element={<FormularioCategoria />} />
                      <Route path="/editarcategoria_adm/:id" element={<FormularioCategoria />} />
                      <Route path="/deletarcategoria_adm/:id" element={<DeletarCategoria />} />
 
                      <Route path="/produtos_adm" element={<ListarProdutos />} />
-                     <Route path="/produtocategoria_adm" element={<FormularioProduto />} />
+                     <Route path="/cadastroproduto_adm" element={<FormularioProduto />} />
                      <Route path="/editarproduto_adm/:id" element={<FormularioProduto />} />
                      <Route path="/deletarproduto_adm/:id" element={<DeletarProduto />} />
                   </Routes>
