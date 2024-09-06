@@ -31,7 +31,7 @@ function Navbar() {
             </div>
 
             <div className="flex justify-end items-center">
-               <Link to={'/login'} className="px-2 text-2xl hover:underline">M-Produto</Link>
+               <Link to={'/produtos_adm'} className="px-2 text-2xl hover:underline">M-Produto</Link>
                <Link to={'/categorias_adm'} className="px-2 text-2xl hover:underline">M-Categoria</Link>
                <button onClick={logout} className="px-2 text-2xl hover:underline">Sair</button>
             </div>
