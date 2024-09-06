@@ -45,7 +45,7 @@ function ListarCategorias() {
         <>
             <div className="flex flex-col h-[80vh] bg-[#F5F4D6]">
                 <div className="w-full flex justify-center">
-                    <Link className="my-4 py-4 px-4" to={'/cadastrocategoria_adm'}>Adicionar Categoria</Link>
+                    <Link className="my-4 py-4 px-4 border-2 rounded-lg border-[#2B4042] bg-[#1E765A] text-[#F5F4D6]" to={'/cadastrocategoria_adm'}>Adicionar Nova Categoria</Link>
                 </div>
 
                 {categorias.length === 0 && (
@@ -59,7 +59,7 @@ function ListarCategorias() {
                     />
                 )}
 
-                <div className="bg-gray-200 flex justify-center">
+                <div className="bg-[#F5F4D6] flex justify-center">
                     <div className="my-4 container flex flex-col">
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

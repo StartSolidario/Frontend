@@ -62,7 +62,7 @@ function DeletarCategoria() {
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
-            }else{
+            } else {
                 ToastAlerta('Erro ao Excluir a Categoria!', 'Erro')
             }
         }
@@ -72,37 +72,39 @@ function DeletarCategoria() {
     }
 
     return (
-        <div className='mx-auto w-1/3 container'>
-            <h1 className='my-4 text-4xl text-center'>Deletar Categoria</h1>
-            <p className='mb-4 font-semibold text-center'>
-                Você tem certeza de que deseja apagar a Categoria a seguir?</p>
-            <div className='flex flex-col justify-between border rounded-2xl overflow-hidden'>
-                <header 
-                    className='bg-indigo-600 px-6 py-2 font-bold text-2xl text-white'>
-                    Categoria
-                </header>
-                <p className='bg-slate-200 p-8 h-full text-3xl'>{categoria.tipo}</p>
-                <div className="flex">
-                    <button 
-                        className='bg-red-400 hover:bg-red-600 py-2 w-full text-slate-100'
-                        onClick={retornar}
+        <div className="bg-[#F5F4D6] h-[80vh]">
+            <div className='mx-auto w-1/3'>
+                <h1 className='pt-8 pb-4 text-4xl text-center'>Deletar Categoria</h1>
+                <p className='mb-4 font-semibold text-center'>
+                    Você tem certeza de que deseja apagar a Categoria a seguir?</p>
+                <div className=' border-2 border-[#2B4042] rounded-2xl flex flex-col justify-between overflow-hidden'>
+                    <header
+                        className='bg-[#1E765A] text-white px-6 py-2 font-bold text-2xl'>
+                        Categoria
+                    </header>
+                    <p className='bg-slate-200 p-8 h-full text-3xl'>{categoria.tipo}</p>
+                    <div className="flex">
+                        <button
+                            className='w-full text-slate-100 bg-yellow-800 hover:bg-yellow-950 flex items-center justify-center py-2'
+                            onClick={retornar}
                         >
-                        Não
-                    </button>
-                    <button 
-                        className='flex justify-center items-center bg-indigo-400 hover:bg-indigo-600 w-full text-slate-100'
-                        onClick={deletarCategoria}
+                            Não
+                        </button>
+                        <button
+                            className='w-full text-slate-100 bg-emerald-500 hover:bg-emerald-800 flex items-center justify-center py-2'
+                            onClick={deletarCategoria}
                         >
-                        {isLoading ? <RotatingLines
-                        strokeColor="white"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="24"
-                        visible={true}
-                    /> :
-                        <span>Sim</span>
-                    }
-                    </button>
+                            {isLoading ? <RotatingLines
+                                strokeColor="white"
+                                strokeWidth="5"
+                                animationDuration="0.75"
+                                width="24"
+                                visible={true}
+                            /> :
+                                <span>Sim</span>
+                            }
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -36,7 +36,7 @@ function FormularioCategoria() {
             navigate('/')
         }
     }, [token])
-    
+
     useEffect(() => {
         if (id !== undefined) {
             buscarPorId(id)
@@ -94,41 +94,51 @@ function FormularioCategoria() {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center mx-auto container">
-            <h1 className="my-8 text-4xl text-center">
-                {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
-            </h1>
+        <div className="bg-[#F5F4D6] h-[80vh]">
+            <div className="flex flex-col justify-center items-center mx-auto container">
+                <h1 className="my-8 text-4xl text-center">
+                    {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
+                </h1>
 
-            <form className="flex flex-col gap-4 w-1/2"
-                onSubmit={gerarNovaCategoria}
-            >
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="tipo">Descrição do Categoria</label>
-                    <input
-                        type="text"
-                        placeholder="Descreva aqui sua Categoria"
-                        name='tipo'
-                        className="border-2 border-slate-700 p-2 rounded"
-                        value={categoria.tipo}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
-                </div>
-                <button
-                    className="flex justify-center bg-indigo-400 hover:bg-indigo-800 mx-auto py-2 rounded w-1/2 text-slate-100"
-                    type="submit">
+                <form className="flex flex-col gap-4 w-1/2"
+                    onSubmit={gerarNovaCategoria}
+                >
+                    <div className="flex flex-col gap-2">
+                        <label htmlFor="tipo">Descrição do Categoria</label>
+                        <input
+                            type="text"
+                            placeholder="Descreva aqui sua Categoria"
+                            name='tipo'
+                            className="border-2 border-slate-700 p-2 rounded"
+                            value={categoria.tipo}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        />
+                    </div>
+                    <div className="flex justify-around">
+                        <button
+                            className="flex justify-center items-center w-[40%] py-2 text-slate-100 bg-emerald-500 hover:bg-emerald-800 border border-slate-700 rounded-lg"
+                            type="submit">
 
-                    {isLoading ? <RotatingLines
-                        strokeColor="white"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="24"
-                        visible={true}
-                    /> :
-                        <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
-                    }
+                            {isLoading ? <RotatingLines
+                                strokeColor="white"
+                                strokeWidth="5"
+                                animationDuration="0.75"
+                                width="24"
+                                visible={true}
+                            /> :
+                                <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
+                            }
 
-                </button>
-            </form>
+                        </button>
+
+                        <button className='flex justify-center items-center w-[40%] py-2 text-slate-100 bg-yellow-800 hover:bg-yellow-950 border border-slate-700 rounded-lg'
+                            onClick={retornar}
+                        >
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }
