@@ -98,6 +98,10 @@ function FormularioProduto() {
       e.preventDefault()
       setIsLoading(true)
 
+   // Verifica se o produto está sendo montado corretamente
+   console.log("Produto enviado para cadastro: ", produto);
+
+
       if (id !== undefined) {
          try {
             await atualizar(`/produtos`, produto, setProduto, {
@@ -121,12 +125,13 @@ function FormularioProduto() {
             await cadastrar(`/produtos`, produto, setProduto, {
                headers: {
                   Authorization: token,
-               },
+               }
             })
 
             ToastAlerta('Produto cadastrado com sucesso', 'Sucesso');
 
          } catch (error: any) {
+            console.log("Erro ao cadastrar o produto: ", error);
             if (error.toString().includes('401')) {
                handleLogout()
             } else {
@@ -164,7 +169,7 @@ function FormularioProduto() {
             <div className="flex flex-col gap-2">
                <label htmlFor="titulo">Preço do Produto</label>
                <input
-                  type="text"
+                  type="number"
                   placeholder="Preço"
                   name="preco"
                   required
@@ -177,7 +182,7 @@ function FormularioProduto() {
             <div className="flex flex-col gap-2">
                <label htmlFor="titulo">Quantidade Disponivel do Produto</label>
                <input
-                  type="text"
+                  type="number"
                   placeholder="Quantidade"
                   name="quantidade"
                   required
@@ -229,7 +234,7 @@ function FormularioProduto() {
                <select name="categoria" id="categoria" className='border-slate-800 p-2 border rounded'
                   onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
                >
-                  <option value="" selected disabled>Selecione um Tema</option>
+                  <option value="" selected disabled>Selecione uma Categoria</option>
 
                   {categorias.map((categoria) => (
                      <>
