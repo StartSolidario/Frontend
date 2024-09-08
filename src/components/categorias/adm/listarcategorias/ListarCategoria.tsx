@@ -43,7 +43,7 @@ function ListarCategorias() {
 
     return (
         <>
-            <div className="flex flex-col h-[80vh] bg-[#F5F4D6]">
+            <div className="flex flex-col min-h-[80vh] bg-[#F5F4D6]">
                 <div className="w-full flex justify-center">
                     <Link className="my-4 py-4 px-4 border-2 rounded-lg border-[#2B4042] bg-[#1E765A] text-[#F5F4D6]" to={'/cadastrocategoria_adm'}>Adicionar Nova Categoria</Link>
                 </div>

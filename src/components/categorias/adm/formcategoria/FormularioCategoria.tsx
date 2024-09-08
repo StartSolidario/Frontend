@@ -94,7 +94,7 @@ function FormularioCategoria() {
     }
 
     return (
-        <div className="bg-[#F5F4D6] h-[80vh]">
+        <div className="bg-[#F5F4D6] min-h-[80vh]">
             <div className="flex flex-col justify-center items-center mx-auto container">
                 <h1 className="my-8 text-4xl text-center">
                     {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}

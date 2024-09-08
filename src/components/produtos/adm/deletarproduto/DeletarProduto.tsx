@@ -74,44 +74,50 @@ function DeletarProduto() {
    }
 
    return (
-      <div className='mx-auto w-1/3 container'>
-         <h1 className='my-4 text-4xl text-center'>Deletar Produto</h1>
+      <div className="bg-[#F5F4D6] min-h-[80vh] py-8">
+         <div className='mx-auto w-1/3'>
+            <h1 className='py-2 text-4xl text-center'>Deletar Produto</h1>
 
-         <p className='mb-4 font-semibold text-center'>
-            Você tem certeza de que deseja apagar o produto a seguir?
-         </p>
+            <p className='mb-4 font-semibold text-center'>Você tem certeza de que deseja apagar o produto a seguir?</p>
 
-         <div className='flex flex-col justify-between border rounded-2xl overflow-hidden'>
-            <header
-               className='bg-indigo-600 px-6 py-2 font-bold text-2xl text-white'>
-               Produto
-            </header>
-            <div className="p-4">
-               <p className='h-full text-xl'>{produto.nome}</p>
-               <p>Preço: {produto.preco}</p>
-               <p>quantidade: {produto.quantidade}</p>
-            </div>
-            <div className="flex">
-               <button
-                  className='bg-red-400 hover:bg-red-600 py-2 w-full text-slate-100'
-                  onClick={retornar}>
-                  Não
-               </button>
-               <button
-                  className='flex justify-center items-center bg-indigo-400 hover:bg-indigo-600 w-full text-slate-100'
-                  onClick={deletarProduto}>
+            <div className='border-2 border-[#2B4042] rounded-2xl flex flex-col justify-between overflow-hidden'>
+               <div className="flex flex-col w-full bg-[#1E765A] text-white py-2 px-4 items-center justify-center gap-4">
+                  <h3 className='py-2 px-6 font-bold text-2xl text-center uppercase '>{produto.nome}</h3>
+                  <div className="w-[80%] bg-[#2B4042]">
+                     <img src={produto.foto} className='w-full h-full p-4' alt="Imagem Produto" />
+                  </div>
+               </div>
+               <div className='p-4 bg-slate-200'>
+                  <h4 className='text-lg font-semibold uppercase text-center '>Detalhes:</h4>
+                  <p className="text-base font-semibold">Tamanho: <span className="font-normal">{produto.tamanho}</span></p>
+                  <p className="text-base font-semibold">Cor: <span className="font-normal">{produto.cor}</span></p>
+                  <p className="text-base font-semibold">Quantidade: <span className="font-normal">{produto.quantidade}</span></p>
+                  <p className="text-base font-semibold">preco: <span className="font-normal">{produto.preco}</span></p>
+                  <p className="text-base font-semibold">categoria: <span className="font-normal">{produto.categoria?.tipo}</span></p>
+               </div>
 
-                  {isLoading ?
-                     <RotatingLines
-                        strokeColor="white"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="24"
-                        visible={true}
-                     /> :
-                     <span>Sim</span>
-                  }
-               </button>
+               <div className="flex">
+                  <button
+                     className='w-full text-slate-100 bg-yellow-800 hover:bg-yellow-950 flex items-center justify-center py-2'
+                     onClick={retornar}>
+                     Não
+                  </button>
+                  <button
+                     className='w-full text-slate-100 bg-emerald-500 hover:bg-emerald-800 flex items-center justify-center py-2'
+                     onClick={deletarProduto}>
+
+                     {isLoading ?
+                        <RotatingLines
+                           strokeColor="white"
+                           strokeWidth="5"
+                           animationDuration="0.75"
+                           width="24"
+                           visible={true}
+                        /> :
+                        <span>Sim</span>
+                     }
+                  </button>
+               </div>
             </div>
          </div>
       </div>

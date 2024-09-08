@@ -44,7 +44,7 @@ function ListarProdutos() {
    }, [produtos.length]);
    return (
       <>
-         <div className="flex flex-col h-[80vh] bg-[#F5F4D6]">
+         <div className="flex flex-col min-h-[80vh] bg-[#F5F4D6]">
             <div className="w-full flex justify-center">
                <Link className="my-4 py-4 px-4 border-2 rounded-lg border-[#2B4042] bg-[#1E765A] text-[#F5F4D6]" to={'/cadastroproduto_adm'}>Adicionar Novo Produto</Link>
             </div>

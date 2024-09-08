@@ -83,12 +83,24 @@ function FormularioProduto() {
    }, [categoria])
 
    function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
-      setProduto({
-         ...produto,
-         [e.target.name]: e.target.value,
-         [e.target.name]: e.target.name === "preco" ? parseFloat(e.target.value) : e.target.value,
-         categoria: categoria
-      });
+
+      // Variável temporária
+       let value: any;
+
+      // Verifica se o campo se chama preco
+       if (e.target.name === "preco") {
+           // Em caso positivo, converte para float
+           value = parseFloat(Number(e.target.value).toFixed(2))
+       } else {
+           // Em caso negativo, mantém o valor atual
+           value = e.target.value
+       }
+
+       setProduto({
+           ...produto,
+           [e.target.name]: value, // Passa como valor do atributo a variável value
+           categoria: categoria
+       });
    }
 
    function retornar() {
@@ -99,8 +111,8 @@ function FormularioProduto() {
       e.preventDefault()
       setIsLoading(true)
 
-   // Verifica se o produto está sendo montado corretamente
-   console.log("Produto enviado para cadastro: ", produto);
+      // Verifica se o produto está sendo montado corretamente
+      console.log("Produto enviado para cadastro: ", produto);
 
 
       if (id !== undefined) {
@@ -148,129 +160,132 @@ function FormularioProduto() {
    const carregandoCategoria = categoria.tipo === '';
 
    return (
-      <div className="flex flex-col items-center mx-auto container">
-         <h1 className="my-8 text-4xl text-center">
-            {id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}
-         </h1>
+      <div className="bg-[#F5F4D6] min-h-[80vh] py-8">
+         <div className="flex flex-col items-center mx-auto container">
+            <h1 className="my-8 text-4xl text-center">
+               {id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}
+            </h1>
 
-         <form className="flex flex-col gap-4 w-1/2" onSubmit={gerarNovoProduto}>
-            <div className="flex flex-col gap-2">
-               <label htmlFor="titulo">Nome do Produto</label>
-               <input
-                  type="text"
-                  placeholder="Nome"
-                  name="nome"
-                  required
-                  className="border-2 border-slate-700 p-2 rounded"
-                  value={produto.nome}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-               />
-            </div>
+            <form className="flex flex-col gap-4 w-1/2" onSubmit={gerarNovoProduto}>
+               <div className="flex flex-col gap-2">
+                  <label htmlFor="titulo">Nome do Produto</label>
+                  <input
+                     type="text"
+                     placeholder="Nome"
+                     name="nome"
+                     required
+                     className="border-2 border-slate-700 p-2 rounded"
+                     value={produto.nome}
+                     onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                  />
+               </div>
 
-            <div className="flex flex-col gap-2">
-               <label htmlFor="titulo">Preço do Produto</label>
-               <input
-                  type="number"
-                  placeholder="Preço"
-                  name="preco"
-                  required
-                  className="border-2 border-slate-700 p-2 rounded"
-                  value={produto.preco}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-               />
-            </div>
+               <div className="flex flex-col gap-2">
+                  <label htmlFor="titulo">Preço do Produto</label>
+                  <input
+                     type="number"
+                     step=".01"
+                     placeholder="Preço"
+                     name="preco"
+                     required
+                     className="border-2 border-slate-700 p-2 rounded"
+                     value={produto.preco}
+                     onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                  />
+               </div>
 
-            <div className="flex flex-col gap-2">
-               <label htmlFor="titulo">Quantidade Disponivel do Produto</label>
-               <input
-                  type="number"
-                  placeholder="Quantidade"
-                  name="quantidade"
-                  required
-                  className="border-2 border-slate-700 p-2 rounded"
-                  value={produto.quantidade}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-               />
-            </div>
+               <div className="flex flex-col gap-2">
+                  <label htmlFor="titulo">Quantidade Disponivel do Produto</label>
+                  <input
+                     type="number"
+                     placeholder="Quantidade"
+                     name="quantidade"
+                     required
+                     className="border-2 border-slate-700 p-2 rounded"
+                     value={produto.quantidade}
+                     onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                  />
+               </div>
 
-            <div className="flex flex-col gap-2">
-               <label htmlFor="titulo">URL-Foto do Produto</label>
-               <input
-                  type="text"
-                  placeholder="URL"
-                  name="foto"
-                  required
-                  className="border-2 border-slate-700 p-2 rounded"
-                  value={produto.foto}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-               />
-            </div>
+               <div className="flex flex-col gap-2">
+                  <label htmlFor="titulo">URL-Foto do Produto</label>
+                  <input
+                     type="text"
+                     placeholder="URL"
+                     name="foto"
+                     required
+                     className="border-2 border-slate-700 p-2 rounded"
+                     value={produto.foto}
+                     onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                  />
+               </div>
 
-            <div className="flex flex-col gap-2">
-               <label htmlFor="titulo">Tamanho do Produto</label>
-               <input
-                  type="text"
-                  placeholder="Tamanho"
-                  name="tamanho"
-                  className="border-2 border-slate-700 p-2 rounded"
-                  value={produto.tamanho}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-               />
-            </div>
+               <div className="flex flex-col gap-2">
+                  <label htmlFor="titulo">Tamanho do Produto</label>
+                  <input
+                     type="text"
+                     placeholder="Tamanho"
+                     name="tamanho"
+                     className="border-2 border-slate-700 p-2 rounded"
+                     value={produto.tamanho}
+                     onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                  />
+               </div>
 
-            <div className="flex flex-col gap-2">
-               <label htmlFor="titulo">Cor do Produto</label>
-               <input
-                  type="text"
-                  placeholder="Cor"
-                  name="cor"
-                  className="border-2 border-slate-700 p-2 rounded"
-                  value={produto.cor}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-               />
-            </div>
+               <div className="flex flex-col gap-2">
+                  <label htmlFor="titulo">Cor do Produto</label>
+                  <input
+                     type="text"
+                     placeholder="Cor"
+                     name="cor"
+                     className="border-2 border-slate-700 p-2 rounded"
+                     value={produto.cor}
+                     onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                  />
+               </div>
 
-            <div className="flex flex-col gap-2">
-               <p>Categoria do Produto</p>
-               <select name="categoria" id="categoria" className='border-slate-800 p-2 border rounded'
-                  onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
-               >
-                  <option value="" selected disabled>Selecione uma Categoria</option>
+               <div className="flex flex-col gap-2">
+                  <p>Categoria do Produto</p>
+                  <select name="categoria" id="categoria" className='border-2 border-slate-700 p-2 rounded'
+                     onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
+                  >
+                     <option value="" selected disabled>Selecione uma Categoria</option>
 
-                  {categorias.map((categoria) => (
-                     <>
-                        <option value={categoria.id} >{categoria.tipo}</option>
-                     </>
-                  ))}
+                     {categorias.map((categoria) => (
+                        <>
+                           <option value={categoria.id} >{categoria.tipo}</option>
+                        </>
+                     ))}
 
-               </select>
-            </div>
+                  </select>
+               </div>
 
-            <div className="flex justify-around">
-               <button
-                  className="flex justify-center items-center w-[40%] py-2 text-slate-100 bg-emerald-500 hover:bg-emerald-800 border border-slate-700 rounded-lg"
-                  type="submit"
-                  disabled={carregandoCategoria}>
+               <div className="flex justify-around">
+                  <button
+                     className="flex justify-center items-center w-[40%] py-2 text-slate-100 bg-emerald-500 hover:bg-emerald-800 disabled:bg-slate-500 border border-slate-700 rounded-lg"
+                     type="submit"
+                     disabled={carregandoCategoria}>
 
-                  {isLoading ? <RotatingLines
-                     strokeColor="white"
-                     strokeWidth="5"
-                     animationDuration="0.75"
-                     width="24"
-                     visible={true}
-                  /> :
-                     <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
-                  }
+                     {isLoading ? <RotatingLines
+                        strokeColor="white"
+                        strokeWidth="5"
+                        animationDuration="0.75"
+                        width="24"
+                        visible={true}
+                     /> :
+                        <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
+                     }
 
-               </button>
+                  </button>
 
-               <button className='flex justify-center items-center w-[40%] py-2 text-slate-100 bg-yellow-800 hover:bg-yellow-950 border border-slate-700 rounded-lg'
-                  onClick={retornar}
-               >
-                  Cancelar
-               </button>
-            </div>
-         </form>
+                  <button className='flex justify-center items-center w-[40%] py-2 text-slate-100 bg-yellow-800 hover:bg-yellow-950 border border-slate-700 rounded-lg'
+                     onClick={retornar}
+                  >
+                     Cancelar
+                  </button>
+               </div>
+            </form>
+         </div>
       </div>
    )
 }
