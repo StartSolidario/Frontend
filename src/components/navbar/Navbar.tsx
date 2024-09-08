@@ -19,9 +19,10 @@ function Navbar() {
 
    if (usuario.token !== "" && usuario.tipo !== "") {
       component = (
-         <div className="w-full flex justify-around items-center bg-[#2B4042] text-[#F5F4D6] py-3">
-            <div className="flex justify-start items-center">
-               <Link to={'/'}><img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida-with-text-double-font.png?updatedAt=1724785507618" alt="Logo do Start Solidário" style={{ width: '225px' }} /></Link>
+         <div className="w-full flex justify-around bg-[#2B4042] text-[#F5F4D6] py-3">
+            <div className="flex justify-start">
+               <Link to={'/'}><img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida-with-text-double-font.png?updatedAt=1724785507618" 
+               alt="Logo do Start Solidário" style={{ width: '225px' }} /></Link>
             </div>
 
             <div className="flex justify-center items-center">
@@ -41,7 +42,8 @@ function Navbar() {
       component = (
          <div className="w-full flex justify-around items-center bg-[#2B4042] text-[#F5F4D6] py-3">
             <div className="flex justify-start items-center">
-               <Link to={'/'}><img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida-with-text-double-font.png?updatedAt=1724785507618" alt="Logo do Start Solidário" style={{ width: '225px' }} /></Link>
+               <Link to={'/'}><img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida-with-text-double-font.png?updatedAt=1724785507618" 
+               alt="Logo do Start Solidário" style={{ width: '225px' }} /></Link>
             </div>
 
             <div className="flex justify-center items-center">
@@ -60,7 +62,8 @@ function Navbar() {
       component = (
          <div className="w-full flex justify-around items-center bg-[#2B4042] text-[#F5F4D6] py-3">
             <div className="flex justify-start items-center">
-               <Link to={'/'}><img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida-with-text-double-font.png?updatedAt=1724785507618" alt="Logo do Start Solidário" style={{ width: '225px' }} /></Link>
+               <Link to={'/'}><img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida-with-text-double-font.png?updatedAt=1724785507618" 
+               alt="Logo do Start Solidário" style={{ width: '225px' }} /></Link>
             </div>
 
             <div className="flex justify-center items-center">
