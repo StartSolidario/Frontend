@@ -42,7 +42,7 @@ function Produtos() {
             <p>Caminho: <span>{window.location.pathname}</span></p>
             <div className="bg-[#F5F4D6] flex justify-center">
                <div className="my-4 container flex flex-col">
-                  <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+                  <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
                      {produtos.map((produto) => (
                         <CardProdutos key={produto.id} prod={produto} />
                      ))}
