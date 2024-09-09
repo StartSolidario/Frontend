@@ -17,7 +17,7 @@ function Navbar() {
 
    let component: ReactNode;
 
-   if (usuario.token !== "" && usuario.tipo !== "") {
+   if (usuario.token !== "" && usuario.tipo !== undefined) {
       component = (
          <div className="w-full flex justify-around bg-[#2B4042] text-[#F5F4D6] py-3">
             <div className="flex justify-start">
@@ -38,7 +38,7 @@ function Navbar() {
             </div>
          </div>)
 
-   } else if (usuario.token !== "" && usuario.tipo == "") {
+   } else if (usuario.token !== "" && usuario.tipo == undefined) {
       component = (
          <div className="w-full flex justify-around items-center bg-[#2B4042] text-[#F5F4D6] py-3">
             <div className="flex justify-start items-center">
