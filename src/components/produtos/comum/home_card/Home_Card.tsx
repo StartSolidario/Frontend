@@ -1,10 +1,15 @@
+import { useContext } from "react"
 import Produto from "../../../../models/Produto"
+import { CartContext } from "../../../../contexts/CartContext"
 
 interface CardProdutosProps {
     prod: Produto
 }
 
 function Home_Card({ prod }: CardProdutosProps) {
+
+    const { adicionarProduto } = useContext(CartContext)
+    
     return (
         <div className='flex flex-col border-2 border-[#2B4042] rounded-2xl bg-slate-200'>
             <div className="flex flex-col justify-center items-center">
@@ -21,9 +26,8 @@ function Home_Card({ prod }: CardProdutosProps) {
                 </div>
             </div>
 
-            <div className="flex justify-center items-center w-full p-4 gap-6">
-                <p className="text-xl border-2 border-[#2B4042] px-2">X/X</p>
-                <button className="text-xl border-2 border-[#2B4042] px-2">Adicionar</button>
+            <div className="flex justify-center items-center w-full p-4">
+                <button onClick={() => adicionarProduto(prod)} className="text-xl border-2 border-[#2B4042] rounded-lg px-2 hover:bg-slate-300">Adicionar ao Carinho</button>
             </div>
         </div>
     )

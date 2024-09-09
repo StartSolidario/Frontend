@@ -2,6 +2,7 @@ import { ReactNode, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import AuthContext from "../../contexts/AuthContext";
 import { ToastAlerta } from "../../utils/ToastAlerta";
+import { ShoppingCart } from "@phosphor-icons/react";
 
 function Navbar() {
 
@@ -34,6 +35,7 @@ function Navbar() {
             <div className="flex justify-end items-center">
                <Link to={'/produtos_adm'} className="px-2 text-2xl hover:underline">M-Produto</Link>
                <Link to={'/categorias_adm'} className="px-2 text-2xl hover:underline">M-Categoria</Link>
+               <Link to={'/cart'}><ShoppingCart size={32} weight='bold'/></Link>
                <button onClick={logout} className="px-2 text-2xl hover:underline">Sair</button>
             </div>
          </div>
@@ -54,6 +56,7 @@ function Navbar() {
             </div>
 
             <div className="flex justify-end items-center text-2xl">
+               <Link to={'/cart'}><ShoppingCart size={32} weight='bold'/></Link>
                <button onClick={logout}>Sair</button>
             </div>
          </div>
