@@ -1,8 +1,9 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 import Produto from "../models/Produto";
 import { ToastAlerta } from "../utils/ToastAlerta";
+import AuthContext from "./AuthContext";
 
-export interface Items extends Produto{
+export interface Items extends Produto {
     quantidade: number;
 }
 
@@ -23,7 +24,9 @@ interface CartProviderProps {
 export const CartContext = createContext({} as CartContextProps);
 
 export function CartProvider({ children }: CartProviderProps) {
-    
+
+    const { usuario } = useContext(AuthContext);
+
     const [items, setItems] = useState<Items[]>([]);
 
     // Calcula o número total de itens no carrinho (quantidade acumulada)
@@ -35,8 +38,10 @@ export function CartProvider({ children }: CartProviderProps) {
     // Função para adicionar produtos ao carrinho
     function adicionarProduto(produto: Produto) {
         const itemIndex = items.findIndex(item => item.id === produto.id);
-        
-        if (itemIndex !== -1) {
+
+        if (usuario.token === "") {
+            ToastAlerta("Voce precisa estar logado!", "Info")
+        } else if (itemIndex !== -1) {
             // Produto já está no carrinho, aumenta a quantidade
             const novoCart = [...items];
             novoCart[itemIndex].quantidade += 1;
@@ -47,11 +52,13 @@ export function CartProvider({ children }: CartProviderProps) {
             setItems(prevItems => [...prevItems, { ...produto, quantidade: 1 }]);
             ToastAlerta('Produto adicionado ao carrinho!', 'Sucesso');
         }
+
+
     }
 
     function aumentarProduto(produtoId: number) {
         const itemIndex = items.findIndex(item => item.id === produtoId);
-        
+
         if (itemIndex !== -1) {
             const novoCart = [...items];
             novoCart[itemIndex].quantidade += 1;
@@ -65,10 +72,10 @@ export function CartProvider({ children }: CartProviderProps) {
     // Função para remover produtos do carrinho (reduz a quantidade ou remove)
     function removerProduto(produtoId: number) {
         const itemIndex = items.findIndex(item => item.id === produtoId);
-        
+
         if (itemIndex !== -1) {
             const novoCart = [...items];
-            
+
             if (novoCart[itemIndex].quantidade > 1) {
                 // Reduz a quantidade do produto
                 novoCart[itemIndex].quantidade -= 1;
@@ -90,7 +97,7 @@ export function CartProvider({ children }: CartProviderProps) {
     }
 
     return (
-        <CartContext.Provider 
+        <CartContext.Provider
             value={{ adicionarProduto, aumentarProduto, removerProduto, limparCart, items, quantidadeItems, valorTotal }}
         >
             {children}
