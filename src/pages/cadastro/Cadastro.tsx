@@ -97,6 +97,15 @@ function Cadastro() {
                   <h2 className="text-3xl flex justify-center justify-items-center py-4">Crie sua conta:</h2>
 
                   <div className="flex flex-col w-full px-4 py-2">
+                     <input
+                        hidden
+                        name="tipo"
+                        value={""}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                     />
+                  </div>
+
+                  <div className="flex flex-col w-full px-4 py-2">
                      <label htmlFor="nome" className='px-1 text-lg'>Nome:</label>
                      <input
                         type="text"
