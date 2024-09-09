@@ -7,7 +7,7 @@ function Cart() {
     const { items, quantidadeItems, valorTotal, limparCart } = useContext(CartContext)
 
     return (
-        <div className="bg-gray-200 flex flex-col justify-center mb-8">
+        <div className="bg-gray-200 flex flex-col justify-center pb-8 min-h-[80vh]">
 
             <h1 className="text-4xl text-center my-4">
                 Carrinho de Compras
