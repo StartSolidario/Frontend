@@ -89,7 +89,7 @@ function Cadastro() {
    return (
       <div className='flex justify-center justify-items-center bg-[#F5F4D6] py-[10Vh]'>
          <div className='flex rounded-3xl border-2 border-black w-2/5 m-auto'>
-            <div className='flex flex-col w-full rounded-3xl bg-[#1E765A]'>
+            <div className='flex flex-col w-full rounded-3xl bg-'>
                <div className="flex justify-center w-full h-[20%]">
                   <img onClick={AumentaContador} className="w-[150px]" src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida.png?updatedAt=1724784792101" />
                </div>
