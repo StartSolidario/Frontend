@@ -65,7 +65,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
         })
     }
 
-
     return (
         // renderizando a context na aplicacao react
         <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading }}>

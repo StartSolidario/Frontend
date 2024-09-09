@@ -18,7 +18,7 @@ function Cadastro() {
       usuario: '',
       senha: '',
       foto: '',
-      tipo: ''
+      tipo: 'Comum'
    })
 
    const [usuarioResposta, setUsuarioResposta] = useState<Usuario>({
@@ -29,7 +29,7 @@ function Cadastro() {
       usuario: '',
       senha: '',
       foto: '',
-      tipo: ''
+      tipo: 'Comum'
    })
 
    useEffect(() => {
@@ -95,15 +95,6 @@ function Cadastro() {
                </div>
                <form onSubmit={cadastrarNovoUsuario} className="w-full h-full  text-[#F5F4D6]" >
                   <h2 className="text-3xl flex justify-center justify-items-center py-4">Crie sua conta:</h2>
-
-                  <div className="flex flex-col w-full px-4 py-2">
-                     <input
-                        hidden
-                        name="tipo"
-                        value={""}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                     />
-                  </div>
 
                   <div className="flex flex-col w-full px-4 py-2">
                      <label htmlFor="nome" className='px-1 text-lg'>Nome:</label>

@@ -7,7 +7,7 @@ function Home_navbar() {
     const navigate = useNavigate();
     const { pathname } = useLocation();
 
-    const localkey = pathname.replace("/busca/", "");
+    const localkey = pathname.replace("/produtos/nome/", "");
 
     const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();

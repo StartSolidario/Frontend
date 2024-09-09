@@ -24,6 +24,7 @@ import { ToastContainer } from "react-toastify"
 import EquipeContato from "./pages/equipecontato/EquipeContato"
 import { CartProvider } from "./contexts/CartContext"
 import Cart from "./components/carrinho/cart/Cart"
+import Produtos_Filtro from "./pages/produtos/Produtos_Filtro"
 import Produtos from "./pages/produtos/Produtos"
 
 function App() {
@@ -58,7 +59,8 @@ function App() {
                         <Route path="/editarproduto_adm/:id" element={<FormularioProduto />} />
                         <Route path="/deletarproduto_adm/:id" element={<DeletarProduto />} />
 
-                        <Route path="/produtos/nome/:keyword" element={<Produtos />} />
+                        <Route path="/produtos" element={<Produtos />} />
+                        <Route path="/produtos/nome/:keyword" element={<Produtos_Filtro />} />
                         <Route path="/cart" element={<Cart />} />
                      </Routes>
                   </div>

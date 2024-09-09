@@ -18,7 +18,7 @@ function CadastroAdm() {
       usuario: '',
       senha: '',
       foto: '',
-      tipo: ''
+      tipo: 'ADM'
    })
 
    const [usuarioResposta, setUsuarioResposta] = useState<Usuario>({
@@ -29,7 +29,7 @@ function CadastroAdm() {
       usuario: '',
       senha: '',
       foto: '',
-      tipo: ''
+      tipo: 'ADM'
    })
 
    useEffect(() => {
@@ -130,8 +130,7 @@ function CadastroAdm() {
                         name="tipo"
                         placeholder="Administrador"
                         className="rounded-xl p-2 text-black"
-                        value={usuario.tipo}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        value={"ADM"}
                      />
                   </div>
 
