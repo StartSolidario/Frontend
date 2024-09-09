@@ -2,62 +2,98 @@ import { createContext, ReactNode, useState } from "react";
 import Produto from "../models/Produto";
 import { ToastAlerta } from "../utils/ToastAlerta";
 
+export interface Items extends Produto{
+    quantidade: number;
+}
+
 interface CartContextProps {
-    adicionarProduto: (produto: Produto) => void
-    removerProduto: (produtoId: number) => void
-    limparCart: () => void
-    items: Produto[]
-    quantidadeItems: number
+    adicionarProduto: (produto: Produto) => void;
+    aumentarProduto: (produtoId: number) => void;
+    removerProduto: (produtoId: number) => void;
+    limparCart: () => void;
+    items: Items[];
+    quantidadeItems: number;
+    valorTotal: number;
 }
 
 interface CartProviderProps {
-    children: ReactNode
+    children: ReactNode;
 }
 
-export const CartContext = createContext({} as CartContextProps)
+export const CartContext = createContext({} as CartContextProps);
 
 export function CartProvider({ children }: CartProviderProps) {
+    
+    const [items, setItems] = useState<Items[]>([]);
 
-    // Estado que armazenará os Produtos do Carrinho
-    const [items, setItems] = useState<Produto[]>([])
+    // Calcula o número total de itens no carrinho (quantidade acumulada)
+    const quantidadeItems = items.reduce((acc, item) => acc + item.quantidade, 0);
 
-    // Estadoque retorna o número de itens do Carrinho
-    const quantidadeItems = items.length
+    // Calcula o valor total da compra
+    const valorTotal = items.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
 
-    // Função para adicionar Produtos no Carrinho
+    // Função para adicionar produtos ao carrinho
     function adicionarProduto(produto: Produto) {
-        const indice = items.find(items => items.id === produto.id)
-        if(indice !== undefined){
-            ToastAlerta('Este Produto já foi Adicionado!', 'Info')
-        }else{
-            setItems(state => [...state, produto])
-            ToastAlerta('Produto Adicionado!', 'Sucesso')
+        const itemIndex = items.findIndex(item => item.id === produto.id);
+        
+        if (itemIndex !== -1) {
+            // Produto já está no carrinho, aumenta a quantidade
+            const novoCart = [...items];
+            novoCart[itemIndex].quantidade += 1;
+            setItems(novoCart);
+            ToastAlerta('01 item adicionado!', 'Sucesso');
+        } else {
+            // Produto não está no carrinho, adiciona novo item
+            setItems(prevItems => [...prevItems, { ...produto, quantidade: 1 }]);
+            ToastAlerta('Produto adicionado ao carrinho!', 'Sucesso');
         }
     }
 
-    // Função para Remover um produto especifico do Carrinho
+    function aumentarProduto(produtoId: number) {
+        const itemIndex = items.findIndex(item => item.id === produtoId);
+        
+        if (itemIndex !== -1) {
+            const novoCart = [...items];
+            novoCart[itemIndex].quantidade += 1;
+            setItems(novoCart);
+            ToastAlerta('01 item adicionado!', 'Sucesso');
+        } else {
+            ToastAlerta('Produto não encontrado no carrinho!', 'Erro');
+        }
+    }
+
+    // Função para remover produtos do carrinho (reduz a quantidade ou remove)
     function removerProduto(produtoId: number) {
-        const indice = items.findIndex(items => items.id === produtoId)
-        let novoCart = [...items]
-
-        if(indice >= 0){
-            novoCart.splice(indice, 1)
-            setItems(novoCart)
+        const itemIndex = items.findIndex(item => item.id === produtoId);
+        
+        if (itemIndex !== -1) {
+            const novoCart = [...items];
+            
+            if (novoCart[itemIndex].quantidade > 1) {
+                // Reduz a quantidade do produto
+                novoCart[itemIndex].quantidade -= 1;
+                setItems(novoCart);
+                ToastAlerta('01 Item removido!', 'Sucesso');
+            } else {
+                // Remove o produto se a quantidade for 1
+                novoCart.splice(itemIndex, 1);
+                setItems(novoCart);
+                ToastAlerta('Produto removido!', 'Sucesso');
+            }
         }
-
     }
 
-    // Função para Limpar o Carrinho
+    // Função para limpar o carrinho
     function limparCart() {
-        ToastAlerta('Compra Efetuada com Sucesso', 'Sucesso')
-        setItems([])
+        ToastAlerta('Compra efetuada com sucesso!', 'Sucesso');
+        setItems([]);
     }
 
     return (
         <CartContext.Provider 
-            value={{ adicionarProduto, removerProduto, limparCart, items, quantidadeItems }}
+            value={{ adicionarProduto, aumentarProduto, removerProduto, limparCart, items, quantidadeItems, valorTotal }}
         >
             {children}
         </CartContext.Provider>
-    )
+    );
 }

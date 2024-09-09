@@ -1,14 +1,14 @@
 import { useContext } from "react"
-import { CartContext } from "../../../contexts/CartContext"
-import Produto from "../../../models/Produto"
+import { CartContext, Items } from "../../../contexts/CartContext"
+import { Plus, Minus } from "@phosphor-icons/react"
 
 interface CardProdutosProps {
-    item: Produto
+    item: Items
 }
 
 function CardCart({ item }: CardProdutosProps) {
 
-    const { removerProduto } = useContext(CartContext)
+    const { aumentarProduto, removerProduto } = useContext(CartContext)
 
     return (
         <div className='flex flex-col rounded-lg overflow-hidden justify-between bg-white'>
@@ -24,14 +24,22 @@ function CardCart({ item }: CardProdutosProps) {
                             currency: 'BRL'
                         }).format(item.preco)}
                     </h3>
-                    <p className='text-sm italic text-center'>Categoria: <span>{item.categoria?.tipo}</span></p>
+                    <p className='text-sm italic text-center'>Categoria: {item.categoria?.tipo} </p>
+                    <h4 className='my-2 text-center'>
+                        <span className="font-semibold">Quantidade:</span> {item.quantidade} 
+                    </h4>
                 </div>
             </div>
             <div className="flex flex-wrap">
-                <button className='w-full text-slate-100 bg-red-500 hover:bg-red-700 
+                <button className='w-1/2 text-slate-100 bg-blue-500 hover:bg-blue-700 
+                                   flex items-center justify-center py-2'
+                    onClick={() => aumentarProduto(item.id)}>
+                    <Plus size={32} />
+                </button>
+                <button className='w-1/2 text-slate-100 bg-red-500 hover:bg-red-700 
                                    flex items-center justify-center py-2'
                     onClick={() => removerProduto(item.id)}>
-                    Remover
+                    <Minus size={32} />
                 </button>
             </div>
         </div >

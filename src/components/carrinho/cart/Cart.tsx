@@ -4,17 +4,17 @@ import CardCart from "../cardcart/cardcart";
 
 function Cart() {
 
-    const { items, limparCart } = useContext(CartContext)
-    
-    return (
-        <div className="bg-gray-200 flex flex-col justify-center min-h-[80vh] py-8">
+    const { items, quantidadeItems, valorTotal, limparCart } = useContext(CartContext)
 
-            <h1 className="text-4xl text-center">
+    return (
+        <div className="bg-gray-200 flex flex-col justify-center mb-8">
+
+            <h1 className="text-4xl text-center my-4">
                 Carrinho de Compras
             </h1>
 
             <h2 className="text-2xl text-center my-4">
-                { items.length === 0 ? 'O Carrinho está vazio!' : ''}
+                {items.length === 0 ? 'O Carrinho está vazio!' : ''}
             </h2>
 
             <div className='container mx-auto my-4 grid grid-cols-1 
@@ -26,8 +26,22 @@ function Cart() {
                 }
             </div>
 
-            <button className="rounded text-slate-100 bg-slate-400 hover:bg-slate-800 w-1/4 py-2 mx-auto flex justify-center"
-                type="submit" 
+            <div className="text-center text-lg">
+                <p>
+                    <span className="font-semibold">Total de items adicionados: </span>
+                    {quantidadeItems}
+                </p>
+                <p>
+                    <span className="font-semibold">Valor Total compra: </span>
+                    {Intl.NumberFormat('pt-BR', {
+                        style: 'currency',
+                        currency: 'BRL'
+                    }).format(valorTotal)}
+                </p>
+            </div>
+
+            <button className="rounded text-slate-100 bg-slate-400 hover:bg-slate-800 w-1/4 py-2 mx-auto flex justify-center mt-8"
+                type="submit"
                 disabled={items.length === 0 ? true : false}
                 onClick={limparCart}>
                 Finalizar Compra
