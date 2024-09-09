@@ -58,7 +58,7 @@ function App() {
                         <Route path="/editarproduto_adm/:id" element={<FormularioProduto />} />
                         <Route path="/deletarproduto_adm/:id" element={<DeletarProduto />} />
 
-                        <Route path="/produtos" element={<Produtos />} />
+                        <Route path="/produtos/nome/:keyword" element={<Produtos />} />
                         <Route path="/cart" element={<Cart />} />
                      </Routes>
                   </div>
