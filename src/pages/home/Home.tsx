@@ -1,4 +1,5 @@
 import Carrossel from "../../components/carrossel/Carrossel"
+import Home_Lista from "../../components/produtos/comum/home_lista/Home_Lista"
 import Home_navbar from "../../components/produtos/comum/home_navbar/Home_navbar"
 
 function Home() {
@@ -12,8 +13,14 @@ function Home() {
             <Carrossel />
          </div>
 
-         <div>
-            
+         <div className="flex flex-col justify-center items-center">
+            <h3 className="text-3xl py-2 mt-6 w-full text-center bg-[#1E765A] text-[#F5F4D6]">Não pode viajar? Não tem problema, ajude a financiar a viagem de alguem!</h3>
+            <div className="flex flex-col justify-center items-center">
+               <h4 className="text-2xl font-bold">Produtos disponiveis:</h4>
+               <div>
+                  < Home_Lista />
+               </div>
+            </div>
          </div>
       </div>
    )
