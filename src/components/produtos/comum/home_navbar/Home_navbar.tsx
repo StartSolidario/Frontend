@@ -6,11 +6,13 @@ function Home_navbar() {
             <form className="relative flex w-3/5 rounded-xl">
                 <input
                     className="w-full rounded-xl border px-6 py-2 text-base font-medium outline-none placeholder:font-medium focus:border-gray-500"
-                    type="text"
+                    type="search"
+                    id="busca"
+                    name="busca"
                     placeholder="Buscar Produto"
                 />
 
-                <button className="absolute right-0 top-0 flex rounded-xl px-3 py-2 outline-none" aria-label="Buscar">
+                <button type="submit" className="absolute right-0 top-0 flex rounded-xl px-3 py-2 outline-none" aria-label="Busca">
                     <MagnifyingGlass size={32} />
                 </button>
             </form>

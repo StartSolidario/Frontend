@@ -28,7 +28,7 @@ function Navbar() {
 
             <div className="flex justify-center items-center">
                <Link to={'/voluntariado'} className="px-2 text-2xl hover:underline">Voluntariado</Link>
-               <Link to={'/comprar'} className="px-2 text-2xl hover:underline">Comprar</Link>
+               <Link to={'/produtos'} className="px-2 text-2xl hover:underline">Comprar</Link>
                <Link to={'/sobre'} className="px-2 text-2xl hover:underline">Sobre nós</Link>
             </div>
 
@@ -51,7 +51,7 @@ function Navbar() {
 
             <div className="flex justify-center items-center">
                <Link to={'/voluntariado'} className="px-2 text-2xl hover:underline">Voluntariado</Link>
-               <Link to={'/comprar'} className="px-2 text-2xl hover:underline">Comprar</Link>
+               <Link to={'/produtos'} className="px-2 text-2xl hover:underline">Comprar</Link>
                <Link to={'/sobre'} className="px-2 text-2xl hover:underline">Sobre nós</Link>
             </div>
 
@@ -72,7 +72,7 @@ function Navbar() {
 
             <div className="flex justify-center items-center">
                <Link to={'/voluntariado'} className="px-2 text-2xl hover:underline">Voluntariado</Link>
-               <Link to={'/comprar'} className="px-2 text-2xl hover:underline">Comprar</Link>
+               <Link to={'/produtos'} className="px-2 text-2xl hover:underline">Comprar</Link>
                <Link to={'/sobre'} className="px-2 text-2xl hover:underline">Sobre nós</Link>
             </div>
 
