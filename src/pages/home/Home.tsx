@@ -79,19 +79,19 @@ function Home() {
             <h2 className="text-5xl text-center font-bold pt-4 text-gray-800"> Start Solidário: Unidos para Erradicar a Pobreza</h2>
             <p className="text-xl pt-4 pb-4 text-center py-6 text-gray-700">Você deseja ser parte da transformação? Explore nossas missões atuais e faça a diferença hoje mesmo:</p></div>
 
-            <div className=" flex justify-center text-center items-center bg-[#1E765A] py-4 border-2 border-[#2B4042] ">
+            <div className=" flex justify-center text-center items-center bg-[#1E765A] py-4 border-2 border-[#2B4042]">
                <Carrossel />
             </div>
 
          <div className="bg-[#F5F4D6] min-h-[80vh]">
-            <div className="flex flex-col justify-center items-center py-16">
-            <h3 className="text-3xl py-4 mt-10  text-center ">
+            <div className="flex flex-col justify-center items-center py-8">
+            <h3 className="text-3xl py-4 text-center ">
             <strong>Não pode embarcar nesta jornada? Sem problemas!</strong></h3>
-            <h4 className=" text-3xl  text-center ">Você ainda pode contribuir para realizar futuros ao financiar a viagem de alguém.</h4>
+            <h4 className=" text-3xl  text-center mb-8">Você ainda pode contribuir para realizar futuros ao financiar a viagem de alguém.</h4>
 
                 {categorias.map(categoria => (
-                    <div key={categoria.id} className="flex flex-col justify-center items-center w-full mx-4 my-4 py-16">
-                        <p className="text-4xl font-bold my-4">Categoria - <span className="text-[#1E765A]">{categoria.tipo}</span></p>
+                    <div key={categoria.id} className="flex flex-col justify-center items-center w-full mx-4 my-4">
+                        <p className="text-4xl font-bold">Categoria - <span className="text-[#1E765A]">{categoria.tipo}</span></p>
                         <Swiper
                             modules={[Pagination, Navigation]}
                             spaceBetween={12}

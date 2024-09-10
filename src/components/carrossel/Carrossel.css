@@ -17,3 +17,9 @@
     height: 100%;
     object-fit: cover;
   }
+  
+  /*Estiliza PopUp*/
+  .popup-content {
+    border-radius: 1rem;
+    padding-bottom: 2rem;
+}

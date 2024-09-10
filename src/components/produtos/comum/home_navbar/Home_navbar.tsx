@@ -25,7 +25,7 @@ function Home_navbar() {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center pt-8 py-7">
+        <div className="flex flex-col justify-center items-center pt-8 py-4">
             <form onSubmit={searchHandler} className="relative flex w-3/5 rounded-xl border-[#1E765A]">
                 <input
                     className="mx-2 w-full rounded-xl border px-6 py-2 text-base font-medium outline-none placeholder:font-medium focus:border-gray-500"
@@ -42,7 +42,7 @@ function Home_navbar() {
                 </button>
             </form>
 
-            <div className='flex gap-10 py-10 '>
+            <div className='flex gap-10 py-4 '>
                 <span className="flex flex-col justify-center items-center">
                     <AirplaneTilt size={48} weight='bold' className="text-[#1E765A]" />
                     <p className="text-base">Viagens</p>
