@@ -1,0 +1,53 @@
+import { useContext } from "react";
+import { CartContext } from "../../../contexts/CartContext";
+import CardCart from "../cardcart/cardcart";
+
+function Cart() {
+
+    const { items, quantidadeItems, valorTotal, limparCart } = useContext(CartContext)
+
+    return (
+        <div className="bg-[#F5F4D6] flex flex-col justify-center pb-8 min-h-[80vh]">
+
+            <h1 className="text-4xl text-center my-4">
+                Carrinho de Compras
+            </h1>
+
+            <h2 className="text-2xl text-center my-4">
+                {items.length === 0 ? 'O Carrinho está vazio!' : ''}
+            </h2>
+
+            <div className='container mx-auto my-4 grid grid-cols-1 
+                            md:grid-cols-2 lg:grid-cols-5 gap-4'>
+                {
+                    items.map(produto => (
+                        <CardCart key={produto.id} item={produto} />
+                    ))
+                }
+            </div>
+
+            <div className="text-center text-lg">
+                <p>
+                    <span className="font-semibold">Total de items adicionados: </span>
+                    {quantidadeItems}
+                </p>
+                <p>
+                    <span className="font-semibold">Valor Total compra: </span>
+                    {Intl.NumberFormat('pt-BR', {
+                        style: 'currency',
+                        currency: 'BRL'
+                    }).format(valorTotal)}
+                </p>
+            </div>
+
+            <button className="rounded text-slate-100 bg-emerald-500 hover:bg-emerald-800 border border-slate-700 w-1/4 py-2 mx-auto flex justify-center mt-8"
+                type="submit"
+                disabled={items.length === 0 ? true : false}
+                onClick={limparCart}>
+                Finalizar Compra
+            </button>
+        </div>
+    )
+}
+
+export default Cart
