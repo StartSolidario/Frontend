@@ -45,28 +45,28 @@ function Home_navbar() {
             <div className='flex gap-10 py-10 '>
                 <span className="flex flex-col justify-center items-center">
                     <AirplaneTilt size={48} weight='bold' className="text-[#1E765A]" />
-                    <p className="text-base">Categoria</p>
+                    <p className="text-base">Viagens</p>
                 </span>
                 <span className="flex flex-col justify-center items-center">
                     <TShirt size={48} weight='bold' className="text-[#1E765A]" />
-                    <p className="text-base">Categoria</p>
+                    <p className="text-base">Roupas</p>
                 </span>
                 <span className="flex flex-col justify-center items-center">
                     <PawPrint size={48} weight='bold' className="text-[#1E765A]" />
-                    <p className="text-base">Categoria</p>
+                    <p className="text-base">Pet</p>
                 </span>
                 <span className="flex flex-col justify-center items-center">
                     <Book size={48} weight='bold' className="text-[#1E765A]" />
-                    <p className="text-base">Categoria</p>
+                    <p className="text-base">Livros</p>
                 </span>
                 <span className="flex flex-col justify-center items-center">
                     <Leaf size={48} weight='bold' className="text-[#1E765A]" />
-                    <p className="text-base">Categoria</p>
+                    <p className="text-base">Artesanato</p>
                 </span>
-                <span className="flex flex-col justify-center items-center">
+                {/* <span className="flex flex-col justify-center items-center">
                     <TShirt size={48} weight='bold' className="text-[#1E765A]" />
                     <p className="text-base">Categoria</p>
-                </span>
+                </span> */}
             </div>
         </div>
     )
