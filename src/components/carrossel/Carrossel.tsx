@@ -7,8 +7,8 @@ import "swiper/css/pagination";
 
 import "./Carrossel.css";
 import Slide01 from "./Slide01";
-import Slide02 from "./Slide02";
-import Slide03 from "./Slide03";
+// import Slide02 from "./Slide02";
+// import Slide03 from "./Slide03";
 
 function Home() {
     return (
@@ -33,13 +33,13 @@ function Home() {
                     <Slide01 />
                 </SwiperSlide>
 
-                <SwiperSlide>
+                {/* <SwiperSlide>
                     <Slide02 />
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <Slide03 />
-                </SwiperSlide>
+                </SwiperSlide> */}
 
             </Swiper>
         </>

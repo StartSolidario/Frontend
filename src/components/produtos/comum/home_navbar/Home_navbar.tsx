@@ -1,4 +1,4 @@
-import { MagnifyingGlass, TShirt } from "@phosphor-icons/react"
+import { AirplaneTilt, Book, Leaf, MagnifyingGlass, PawPrint, TShirt } from "@phosphor-icons/react"
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -25,10 +25,10 @@ function Home_navbar() {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center pt-8">
-            <form onSubmit={searchHandler} className="relative flex w-3/5 rounded-xl">
+        <div className="flex flex-col justify-center items-center pt-8 py-7">
+            <form onSubmit={searchHandler} className="relative flex w-3/5 rounded-xl border-[#1E765A]">
                 <input
-                    className="w-full rounded-xl border px-6 py-2 text-base font-medium outline-none placeholder:font-medium focus:border-gray-500"
+                    className="mx-2 w-full rounded-xl border px-6 py-2 text-base font-medium outline-none placeholder:font-medium focus:border-gray-500"
                     type="search"
                     id="busca"
                     name="busca"
@@ -37,34 +37,34 @@ function Home_navbar() {
                     onChange={(e) => setKeyWord(e.target.value)}
                 />
 
-                <button type="submit" className="absolute right-0 top-0 flex rounded-xl px-3 py-2 outline-none" aria-label="Busca">
+                <button type="submit" className="bg-[#1E765A] hover:bg-[#F8C311] flex rounded-xl px-3 py-2 outline-none" aria-label="Busca">
                     <MagnifyingGlass size={32} />
                 </button>
             </form>
 
-            <div className='flex gap-10 py-4'>
+            <div className='flex gap-10 py-10 '>
                 <span className="flex flex-col justify-center items-center">
-                    <TShirt size={48} weight='bold' />
+                    <AirplaneTilt size={48} weight='bold' className="text-[#1E765A]" />
                     <p className="text-base">Categoria</p>
                 </span>
                 <span className="flex flex-col justify-center items-center">
-                    <TShirt size={48} weight='bold' />
+                    <TShirt size={48} weight='bold' className="text-[#1E765A]" />
                     <p className="text-base">Categoria</p>
                 </span>
                 <span className="flex flex-col justify-center items-center">
-                    <TShirt size={48} weight='bold' />
+                    <PawPrint size={48} weight='bold' className="text-[#1E765A]" />
                     <p className="text-base">Categoria</p>
                 </span>
                 <span className="flex flex-col justify-center items-center">
-                    <TShirt size={48} weight='bold' />
+                    <Book size={48} weight='bold' className="text-[#1E765A]" />
                     <p className="text-base">Categoria</p>
                 </span>
                 <span className="flex flex-col justify-center items-center">
-                    <TShirt size={48} weight='bold' />
+                    <Leaf size={48} weight='bold' className="text-[#1E765A]" />
                     <p className="text-base">Categoria</p>
                 </span>
                 <span className="flex flex-col justify-center items-center">
-                    <TShirt size={48} weight='bold' />
+                    <TShirt size={48} weight='bold' className="text-[#1E765A]" />
                     <p className="text-base">Categoria</p>
                 </span>
             </div>
