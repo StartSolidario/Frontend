@@ -41,8 +41,11 @@ function Navbar() {
                   </div>
                   : <div> </div>
                }
-               <Link to={'/cart'}><ShoppingCart size={32} weight='bold' /></Link>
-               <button onClick={logout} className="px-2 text-2xl hover:underline">Sair</button>
+               <div className="flex justify-center items-center px-2 hover:underline">
+               <Link to={'/cart'}><ShoppingCart size={32} weight='bold'/> </Link>
+               <Link to={'/cart'}><p className="text-2xl">Carrinho</p> </Link>
+               </div>
+               <button onClick={logout} className="px-6 text-2xl hover:underline">Sair</button>
             </div>
          </div>
       )
