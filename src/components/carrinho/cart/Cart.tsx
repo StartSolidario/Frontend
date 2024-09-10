@@ -7,7 +7,7 @@ function Cart() {
     const { items, quantidadeItems, valorTotal, limparCart } = useContext(CartContext)
 
     return (
-        <div className="bg-gray-200 flex flex-col justify-center pb-8 min-h-[80vh]">
+        <div className="bg-[#F5F4D6] flex flex-col justify-center pb-8 min-h-[80vh]">
 
             <h1 className="text-4xl text-center my-4">
                 Carrinho de Compras
@@ -40,7 +40,7 @@ function Cart() {
                 </p>
             </div>
 
-            <button className="rounded text-slate-100 bg-slate-400 hover:bg-slate-800 w-1/4 py-2 mx-auto flex justify-center mt-8"
+            <button className="rounded text-slate-100 bg-emerald-500 hover:bg-emerald-800 border border-slate-700 w-1/4 py-2 mx-auto flex justify-center mt-8"
                 type="submit"
                 disabled={items.length === 0 ? true : false}
                 onClick={limparCart}>

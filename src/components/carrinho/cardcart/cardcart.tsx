@@ -11,7 +11,7 @@ function CardCart({ item }: CardProdutosProps) {
     const { aumentarProduto, removerProduto } = useContext(CartContext)
 
     return (
-        <div className='flex flex-col rounded-lg overflow-hidden justify-between bg-white'>
+        <div className='flex flex-col rounded-lg overflow-hidden justify-between bg-white border border-[#2B4042]'>
             <div className='py-4'>
 
                 <img src={item.foto} className='mt-1 h-40 max-w-75 mx-auto' alt={item.nome} />
@@ -31,12 +31,12 @@ function CardCart({ item }: CardProdutosProps) {
                 </div>
             </div>
             <div className="flex flex-wrap">
-                <button className='w-1/2 text-slate-100 bg-blue-500 hover:bg-blue-700 
+                <button className='w-1/2 text-slate-100 bg-emerald-500 hover:bg-emerald-800 border border-slate-700 
                                    flex items-center justify-center py-2'
                     onClick={() => aumentarProduto(item.id)}>
                     <Plus size={32} />
                 </button>
-                <button className='w-1/2 text-slate-100 bg-red-500 hover:bg-red-700 
+                <button className='w-1/2 text-slate-100 bg-yellow-800 hover:bg-yellow-950 border border-slate-700 
                                    flex items-center justify-center py-2'
                     onClick={() => removerProduto(item.id)}>
                     <Minus size={32} />
