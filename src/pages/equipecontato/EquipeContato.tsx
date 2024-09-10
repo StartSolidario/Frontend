@@ -37,7 +37,7 @@ function EquipeContato() {
             <div>
                 <h2 className="flex item-center justify-center font-bold p-6 text-4xl">Conheça nossa equipe!</h2>
                 <div className="grid grid-cols-2 gap-6 p-6">
-                    <div className="flex flex-col items-center bg-[#2B4042] shadow-lg rounded-lg p-6 hover:bg-[#1e5353]">
+                    <div className="flex flex-col items-center bg-[#2B4042] shadow-lg rounded-lg p-6 border-2 border-black hover:bg-[#F8C311]">
                         <div className="w-24 h-24 rounded-full overflow-hidden bg-white">
                             <img
                                 src="https://ik.imagekit.io/startsolidario/fotos%20equipe/Captura%20de%20tela%202024-09-06%20141234.png?updatedAt=1725642832805"
@@ -55,7 +55,7 @@ function EquipeContato() {
                             </a>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center bg-[#2B4042] shadow-lg rounded-lg p-6 hover:bg-[#1e5353]">
+                    <div className="flex flex-col items-center bg-[#2B4042] shadow-lg rounded-lg p-6 border-2 border-black hover:bg-[#F8C311]">
                         <div className="w-24 h-24 rounded-full overflow-hidden bg-white">
                             <img
                                 src="https://ik.imagekit.io/startsolidario/fotos%20equipe/Imagem%20do%20WhatsApp%20de%202024-09-06%20%C3%A0(s)%2012.05.38_953507ed.jpg?updatedAt=1725642831841"
@@ -73,7 +73,7 @@ function EquipeContato() {
                             </a>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center bg-[#2B4042] shadow-lg rounded-lg p-6 hover:bg-[#1e5353]">
+                    <div className="flex flex-col items-center bg-[#2B4042] shadow-lg rounded-lg p-6 border-2 border-black hover:bg-[#F8C311]">
                         <div className="w-24 h-24 rounded-full overflow-hidden bg-white">
                             <img
                                 src="https://ik.imagekit.io/startsolidario/fotos%20equipe/Imagem%20do%20WhatsApp%20de%202024-09-06%20%C3%A0(s)%2011.57.42_df836fd8.jpg?updatedAt=1725642833406"
@@ -91,7 +91,7 @@ function EquipeContato() {
                             </a>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center bg-[#2B4042] shadow-lg rounded-lg p-6 hover:bg-[#1e5353]">
+                    <div className="flex flex-col items-center bg-[#2B4042] shadow-lg rounded-lg p-6 border-2 border-black hover:bg-[#F8C311]">
                         <div className="w-24 h-24 rounded-full overflow-hidden bg-white">
                             <img
                                 src="https://ik.imagekit.io/startsolidario/fotos%20equipe/Imagem%20do%20WhatsApp%20de%202024-09-06%20%C3%A0(s)%2011.57.36_4e8e7579.jpg?updatedAt=1725642834341"
@@ -109,7 +109,7 @@ function EquipeContato() {
                             </a>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center bg-[#2B4042] shadow-lg rounded-lg p-6 hover:bg-[#1e5353]">
+                    <div className="flex flex-col items-center bg-[#2B4042] shadow-lg rounded-lg p-6 border-2 border-black hover:bg-[#F8C311]">
                         <div className="w-24 h-24 rounded-full overflow-hidden bg-white">
                             <img
                                 src="https://ik.imagekit.io/startsolidario/fotos%20equipe/Imagem%20do%20WhatsApp%20de%202024-09-06%20%C3%A0(s)%2012.24.14_284239f7.jpg?updatedAt=1725642831558"

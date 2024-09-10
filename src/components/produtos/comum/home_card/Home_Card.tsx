@@ -11,9 +11,9 @@ function Home_Card({ prod }: CardProdutosProps) {
     const { adicionarProduto } = useContext(CartContext)
     
     return (
-        <div className='flex flex-col border-2 border-[#2B4042] rounded-2xl bg-slate-200'>
+        <div className='flex flex-col border-2 border-[#1E765A] rounded-2xl bg-[#F5F4D6]'>
             <div className="flex flex-col justify-center items-center">
-                <div className="w-[90%] bg-[#2B4042] my-4">
+                <div className="w-[90%] bg-[#1E765A] my-4">
                     <img src={prod.foto} className='w-full h-full p-2' alt="Imagem Produto" />
                 </div>
 
@@ -27,7 +27,7 @@ function Home_Card({ prod }: CardProdutosProps) {
             </div>
 
             <div className="flex justify-center items-center w-full p-4">
-                <button onClick={() => adicionarProduto(prod)} className="text-xl border-2 border-[#2B4042] rounded-lg px-2 hover:bg-slate-300">Adicionar ao Carinho</button>
+                <button onClick={() => adicionarProduto(prod)} className="text-xl border-2 border-[#1E765A] rounded-lg px-2  hover:bg-[#F8C311]">Adicionar ao Carinho</button>
             </div>
         </div>
     )

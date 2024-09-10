@@ -37,7 +37,7 @@ function Home_navbar() {
                     onChange={(e) => setKeyWord(e.target.value)}
                 />
 
-                <button type="submit" className="bg-[#1E765A] hover:bg-[#80af81] flex rounded-xl px-3 py-2 outline-none" aria-label="Busca">
+                <button type="submit" className="bg-[#1E765A] hover:bg-[#F8C311] flex rounded-xl px-3 py-2 outline-none" aria-label="Busca">
                     <MagnifyingGlass size={32} />
                 </button>
             </form>
