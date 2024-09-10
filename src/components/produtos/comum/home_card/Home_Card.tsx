@@ -11,7 +11,7 @@ function Home_Card({ prod }: CardProdutosProps) {
     const { adicionarProduto } = useContext(CartContext)
 
     return (
-        <div className='flex flex-col border-2 border-[#2B4042] rounded-2xl bg-sky-100'>
+        <div className='flex flex-col border-2 border-[#2B4042] rounded-2xl bg-white'>
             <div className="flex flex-col justify-center items-center">
                 <div className="w-[90%] bg-[#2B4042] my-4">
                     <img src={prod.foto} className='w-full h-full p-1' alt="Imagem Produto" />
