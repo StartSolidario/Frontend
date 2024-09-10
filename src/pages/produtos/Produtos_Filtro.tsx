@@ -18,34 +18,37 @@ function Produtos_Filtro() {
 
    async function buscarProdutos() {
       try {
+         // Faz a busca utilizando a URL atual (com keyword ou sem)
          await buscar(window.location.pathname, setProdutos, {
             headers: {
                Authorization: token,
             },
-         })
+         });
       } catch (error: any) {
          if (error.toString().includes('401')) {
-            ToastAlerta('O token expirou, favor logar novamente', "Info")
-            handleLogout()
+            ToastAlerta('O token expirou, favor logar novamente', "Info");
+            handleLogout();
          }
       }
    }
 
    useEffect(() => {
+      // Remover o reload e manter a busca de produtos
       buscarProdutos();
-   }, [produtos.length]);
+   }, [keyword]); // A busca de produtos será disparada quando a keyword mudar
 
    const produtosFiltrados = produtos.filter((produto) =>
-      keyword
-         ? produto.nome.toLowerCase().includes(keyword.toLowerCase()) : true
-   )
+      keyword ? produto.nome.toLowerCase().includes(keyword.toLowerCase()) : true
+   );
 
    return (
       <div className="bg-[#F5F4D6] min-h-[80vh]">
          <Home_navbar />
 
          <div>
-            <p className="text-xl w-full bg-[#1E765A] text-white px-8 py-2">Caminho-Filtragem: <span className="font-semibold">{window.location.pathname}</span></p>
+            <p className="text-xl w-full bg-[#1E765A] text-white px-8 py-2">
+               Caminho-Filtragem: <span className="font-semibold">{window.location.pathname}</span>
+            </p>
 
             {produtos.length === 0 && (
                <Hourglass
@@ -70,7 +73,7 @@ function Produtos_Filtro() {
             </div>
          </div>
       </div>
-   )
+   );
 }
 
-export default Produtos_Filtro
+export default Produtos_Filtro;

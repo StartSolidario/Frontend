@@ -1,71 +1,114 @@
-import { useContext, useEffect, useState } from "react";
-import Home_navbar from "../../components/produtos/comum/home_navbar/Home_navbar"
-import AuthContext from "../../contexts/AuthContext";
-import Produto from "../../models/Produto";
-import { ToastAlerta } from "../../utils/ToastAlerta";
+import { useEffect, useState } from "react";
+import Home_navbar from "../../components/produtos/comum/home_navbar/Home_navbar";
 import { buscar } from "../../services/service";
 import { Hourglass } from "react-loader-spinner";
 import Home_Card from "../../components/produtos/comum/home_card/Home_Card";
+import Produto from "../../models/Produto";
+import Categoria from "../../models/Categoria";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css/bundle';
+import { Navigation, Pagination } from "swiper/modules";
+
+import './Produtos.css';
 
 function Produtos() {
     const [produtos, setProdutos] = useState<Produto[]>([]);
+    const [categorias, setCategorias] = useState<Categoria[]>([]);
+    const [loading, setLoading] = useState(true);
 
-    const { usuario, handleLogout } = useContext(AuthContext);
-    const token = usuario.token;
+    async function buscarCategorias() {
+        try {
+            await buscar('/categorias', (data: Categoria[]) => setCategorias(data), {});
+        } catch (error) {
+            console.error('Erro ao carregar categorias', error);
+        }
+    }
 
     async function buscarProdutos() {
         try {
-            await buscar("/produtos", setProdutos, {
-                headers: {
-                    Authorization: token,
-                },
-            })
-        } catch (error: any) {
-            if (error.toString().includes('401')) {
-                ToastAlerta('O token expirou, favor logar novamente', "Info")
-                handleLogout()
-            }
+            await buscar('/produtos', (data: Produto[]) => {
+                setProdutos(data);
+                setLoading(false);
+            }, {});
+        } catch (error) {
+            console.error('Erro ao carregar produtos', error);
         }
     }
 
     useEffect(() => {
-        buscarProdutos();
-    }, [produtos.length]);
+        (async () => {
+            try {
+                await buscarCategorias(); // Buscar categorias primeiro
+            } catch (error) {
+                console.error('Erro ao carregar categorias', error);
+            }
+        })();
+    }, []); // Carregar categorias uma vez na montagem do componente
+
+    useEffect(() => {
+        if (categorias.length > 0) {
+            buscarProdutos(); // Buscar produtos após categorias estarem carregadas
+        }
+    }, [categorias]); // Recarregar produtos quando categorias mudarem
+
+    if (loading) {
+        return (
+            <div className="bg-[#F5F4D6] min-h-[80vh]">
+                <Home_navbar />
+                <Hourglass
+                    visible={true}
+                    height="120"
+                    width="120"
+                    ariaLabel="hourglass-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="mx-auto my-8"
+                    colors={['#10b981', '#065f46']}
+                />
+            </div>
+        );
+    }
 
     return (
         <div className="bg-[#F5F4D6] min-h-[80vh]">
             <Home_navbar />
 
             <div className="flex flex-col justify-center items-center">
-                <h3 className="text-3xl py-2 mt-6 w-full text-center bg-[#1E765A] text-[#F5F4D6]">Toda Compra Ajuda A Financiar a Viagem de um Voluntario!</h3>
+                <h3 className="text-3xl py-2 mt-6 w-full text-center bg-[#1E765A] text-[#F5F4D6]">Toda Compra Ajuda A Financiar a Viagem de um Voluntário!</h3>
 
-                <div className="flex flex-col justify-center items-center">
-                    <p className="text-2xl font-bold">Categoria: <span>Pet</span></p>
-                    {produtos.length === 0 && (
-                        <Hourglass
-                            visible={true}
-                            height="120"
-                            width="120"
-                            ariaLabel="hourglass-loading"
-                            wrapperStyle={{}}
-                            wrapperClass="mx-auto my-8"
-                            colors={['#10b981', '#065f46']}
-                        />
-                    )}
-
-                    <div className="bg-[#F5F4D6] flex justify-center">
-                        <div className="my-4 container flex flex-col">
-                            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
-                                {produtos.map((produto) => (
-                                    <Home_Card key={produto.id} prod={produto} />
-                                ))}
-                            </div>
-                        </div>
+                {categorias.map(categoria => (
+                    <div key={categoria.id} className="flex flex-col justify-center items-center w-full mx-4 my-4">
+                        <p className="text-2xl font-bold my-4">Categoria - <span>{categoria.tipo}</span></p>
+                        <Swiper
+                            modules={[Pagination, Navigation]}
+                            spaceBetween={12}
+                            slidesPerView={1}
+                            navigation
+                            pagination={{ clickable: true }}
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 2,
+                                },
+                                768: {
+                                    slidesPerView: 3,
+                                },
+                                1024: {
+                                    slidesPerView: 4,
+                                },
+                            }}
+                            className="w-[90%] h-[90%] bg-[#1E765A] py-8 px-12 rounded-2xl"
+                        >
+                            {produtos.filter(produto => produto.categoria?.tipo === categoria.tipo).map((produto) => (
+                                <SwiperSlide key={produto.id}>
+                                    <Home_Card prod={produto} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </div>
-                </div>
+                ))}
             </div>
         </div>
-    )
+    );
 }
 
-export default Produtos
+export default Produtos;
