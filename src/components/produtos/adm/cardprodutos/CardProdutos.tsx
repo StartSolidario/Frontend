@@ -8,14 +8,14 @@ interface CardProdutosProps {
 function CardProdutos({ prod }: CardProdutosProps) {
    return (
       <div className='border-2 border-[#2B4042] flex flex-col rounded-2xl overflow-hidden justify-between'>
-         <div>
+         <div className="">
             <div className="flex flex-col w-full bg-[#1E765A] text-white py-2 px-4 items-center justify-center gap-4">
-               <h3 className='py-2 px-6 font-bold text-2xl text-center uppercase '>{prod.nome}</h3>
-               <div className="w-[80%] bg-[#2B4042]">
-                  <img src={prod.foto} className='w-full h-full p-4' alt="Imagem Produto" />
+               <h3 className='font-bold text-2xl text-center uppercase '>{prod.nome}</h3>
+               <div className="w-[80%] bg-[#2B4042] my-2">
+                  <img src={prod.foto} className='w-full h-full p-1' alt="Imagem Produto" />
                </div>
             </div>
-            <div className='p-4 bg-slate-200'>
+            <div className='p-4 bg-white'>
                <h4 className='text-lg font-semibold uppercase text-center '>Detalhes:</h4>
                <p className="text-base font-semibold">Tamanho: <span className="font-normal">{prod.tamanho}</span></p>
                <p className="text-base font-semibold">Cor: <span className="font-normal">{prod.cor}</span></p>
