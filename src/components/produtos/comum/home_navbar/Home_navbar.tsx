@@ -56,12 +56,12 @@ function Home_navbar() {
                     <p className="text-base">Pet</p>
                 </span>
                 <span className="flex flex-col justify-center items-center">
-                    <Book size={48} weight='bold' className="text-[#1E765A]" />
-                    <p className="text-base">Livros</p>
-                </span>
-                <span className="flex flex-col justify-center items-center">
                     <Leaf size={48} weight='bold' className="text-[#1E765A]" />
                     <p className="text-base">Artesanato</p>
+                </span>
+                <span className="flex flex-col justify-center items-center">
+                    <Book size={48} weight='bold' className="text-[#1E765A]" />
+                    <p className="text-base">Educação</p>
                 </span>
                 {/* <span className="flex flex-col justify-center items-center">
                     <TShirt size={48} weight='bold' className="text-[#1E765A]" />

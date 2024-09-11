@@ -26,7 +26,14 @@ function Home_Card({ prod }: CardProdutosProps) {
                     </div>
 
                     <div className="flex flex-col h-[20%]">
-                        <p className="self-start px-4 text-lg font-semibold">Preço: <span className="font-normal">R$ {prod.preco}</span></p>
+                        <p className='self-start px-4 text-lg font-semibold'>Preço: <span className="self-start px-4 text-lg font-semibold">
+                                {Intl.NumberFormat('pt-BR',
+                                    {
+                                        style: 'currency',
+                                        currency: 'BRL'
+                                    }).format(prod.preco)}
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>

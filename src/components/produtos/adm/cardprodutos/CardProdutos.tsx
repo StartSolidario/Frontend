@@ -20,8 +20,15 @@ function CardProdutos({ prod }: CardProdutosProps) {
                <p className="text-base font-semibold">Tamanho: <span className="font-normal">{prod.tamanho}</span></p>
                <p className="text-base font-semibold">Cor: <span className="font-normal">{prod.cor}</span></p>
                <p className="text-base font-semibold">Quantidade: <span className="font-normal">{prod.quantidade}</span></p>
-               <p className="text-base font-semibold">preco: <span className="font-normal">{prod.preco}</span></p>
-               <p className="text-base font-semibold">categoria: <span className="font-normal">{prod.categoria?.tipo}</span></p>
+               <p className='text-base font-semibold'>Preço: <span className="font-normal">
+                     {Intl.NumberFormat('pt-BR',
+                        {
+                           style: 'currency',
+                           currency: 'BRL'
+                        }).format(prod.preco)}
+                  </span>
+               </p>
+               <p className="text-base font-semibold">Categoria: <span className="font-normal">{prod.categoria?.tipo}</span></p>
             </div>
          </div>
          <div className="flex">
