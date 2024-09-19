@@ -87,17 +87,17 @@ function Cadastro() {
    }, [contador])
 
    return (
-      <div className='flex justify-center justify-items-center bg-[#F5F4D6] py-[10Vh]'>
-         <div className='flex rounded-3xl border-2 border-black w-2/5 m-auto'>
-            <div className='flex flex-col w-full rounded-3xl bg-[#1E765A]'>
+      <div className='flex justify-center items-center bg-[#F5F4D6] py-[10Vh]'>
+         <div className='flex w-3/5 2xl:w-1/2 m-auto'>
+            <div className='flex flex-col w-full rounded-3xl border border-black bg-[#1E765A]'>
                <div className="flex justify-center w-full h-[20%]">
-                  <img onClick={AumentaContador} className="w-[150px]" src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida.png?updatedAt=1724784792101" />
+                  <img onClick={AumentaContador} className="w-[100px] md:w-[125px] lg:w-[150px]" src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida.png?updatedAt=1724784792101" />
                </div>
                <form onSubmit={cadastrarNovoUsuario} className="w-full h-full  text-[#F5F4D6]" >
-                  <h2 className="text-3xl flex justify-center justify-items-center py-4">Crie sua conta:</h2>
+                  <h2 className="text-2xl md:text-3xl flex justify-center items-center py-4">Crie sua conta:</h2>
 
                   <div className="flex flex-col w-full px-4 py-2">
-                     <label htmlFor="nome" className='px-1 text-lg'>Nome:</label>
+                     <label htmlFor="nome" className='px-1 text-base md:text-lg'>Nome:</label>
                      <input
                         type="text"
                         id="nome"
@@ -110,12 +110,12 @@ function Cadastro() {
                   </div>
 
                   <div className="flex flex-col w-full px-4 py-2">
-                     <label htmlFor="usuario" className='px-1 text-lg'>Email:</label>
+                     <label htmlFor="usuario" className='px-1 text-base md:text-lg'>Email:</label>
                      <input
                         type="text"
                         id="usuario"
                         name="usuario"
-                        placeholder="Usuario"
+                        placeholder="Usuario@gmail.com"
                         className="rounded-xl p-2 text-black"
                         value={usuario.usuario}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -123,7 +123,7 @@ function Cadastro() {
                   </div>
 
                   <div className="flex flex-col w-full px-4 py-2">
-                     <label htmlFor="idade" className='px-1 text-lg'>Data de Nascimento:</label>
+                     <label htmlFor="idade" className='px-1 text-base md:text-lg'>Data de Nascimento:</label>
                      <input
                         type="date"
                         id="idade"
@@ -135,7 +135,7 @@ function Cadastro() {
                   </div>
 
                   <div className="flex flex-col w-full px-4 py-2">
-                     <label htmlFor="cpf" className='px-1 text-lg'>CPF:</label>
+                     <label htmlFor="cpf" className='px-1 text-base md:text-lg'>CPF:</label>
                      <input
                         type="text"
                         id="cpf"
@@ -148,7 +148,7 @@ function Cadastro() {
                   </div>
 
                   <div className="flex flex-col w-full px-4 py-2">
-                     <label htmlFor="foto" className='px-1 text-lg'>Foto:</label>
+                     <label htmlFor="foto" className='px-1 text-base md:text-lg'>Foto:</label>
                      <input
                         type="text"
                         id="foto"
@@ -161,7 +161,7 @@ function Cadastro() {
                   </div>
 
                   <div className="flex flex-col w-full px-4 py-2">
-                     <label htmlFor="senha" className='px-1 text-lg'>Senha:</label>
+                     <label htmlFor="senha" className='px-1 text-base md:text-lg'>Senha:</label>
                      <input
                         type="password"
                         id="senha"
@@ -174,7 +174,7 @@ function Cadastro() {
                   </div>
 
                   <div className="flex flex-col w-full px-4 py-2">
-                     <label htmlFor="senha" className='px-1 text-lg'>Confirmar senha:</label>
+                     <label htmlFor="senha" className='px-1 text-base md:text-lg'>Confirmar senha:</label>
                      <input
                         type="password"
                         id="confirma_senha"
@@ -186,11 +186,11 @@ function Cadastro() {
                      />
                   </div>
 
-                  <button type='submit' className="flex justify-center justify-items-center w-full text-xl py-4">
+                  <button type='submit' className="flex justify-center w-full text-lg md:text-xl py-4">
                      <span className='hover:underline'>Criar Conta</span>
                   </button>
 
-                  <p className='flex justify-center justify-items-center w-full pb-4'>
+                  <p className='flex flex-col xl:flex-row justify-center items-center pb-4'>
                      Ja possui uma conta?
                      <Link to="/login" className="hover:underline pl-2">Entre Agora!</Link>
                   </p>
