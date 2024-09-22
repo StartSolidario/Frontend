@@ -5,7 +5,7 @@ function Footer() {
    let data = new Date().getFullYear();
 
    return (
-      <div className="w-full flex justify-around items-center bg-[#2B4042] text-[#F5F4D6] py-4">
+      <div className="w-full min-h-[10vh] flex justify-around items-center bg-[#2B4042] text-[#F5F4D6] py-4">
          <div className="flex justify-start items-center">
             <p className="px-2 text-2xl">© {data} StartSolidario, Inc.</p>
          </div>

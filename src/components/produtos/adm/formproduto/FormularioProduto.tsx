@@ -16,7 +16,7 @@ function FormularioProduto() {
    const [isLoading, setIsLoading] = useState<boolean>(false)
    const [categorias, setCategorias] = useState<Categoria[]>([])
 
-   const [categoria, setCategoria] = useState<Categoria>({ id: 0, tipo: '', })
+   const [categoria, setCategoria] = useState<Categoria>({ id: 0, nome: '', imagem: ''})
    const [produto, setProduto] = useState<Produto>({} as Produto)
 
    const { id } = useParams<{ id: string }>()
@@ -157,7 +157,7 @@ function FormularioProduto() {
       retornar()
    }
 
-   const carregandoCategoria = categoria.tipo === '';
+   const carregandoCategoria = categoria.nome === '';
 
    return (
       <div className="bg-[#F5F4D6] min-h-[80vh] py-8">
@@ -253,7 +253,7 @@ function FormularioProduto() {
 
                      {categorias.map((categoria) => (
                         <>
-                           <option value={categoria.id} >{categoria.tipo}</option>
+                           <option value={categoria.id} >{categoria.nome}</option>
                         </>
                      ))}
 

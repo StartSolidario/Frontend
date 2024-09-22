@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import Home_navbar from "../../components/produtos/comum/home_navbar/Home_navbar";
 import { buscar } from "../../services/service";
 import { Hourglass } from "react-loader-spinner";
-import Home_Card from "../../components/produtos/comum/home_card/Home_Card";
 import Produto from "../../models/Produto";
 import Categoria from "../../models/Categoria";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,6 +9,8 @@ import 'swiper/css/bundle';
 import { Navigation, Pagination } from "swiper/modules";
 
 import './Produtos.css';
+import NavbarComum from "../../components/produtos/comum/navbarcomum/NavbarComum";
+import CardComum from "../../components/produtos/comum/cardcomum/CardComum";
 
 function Produtos() {
     const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -55,7 +55,7 @@ function Produtos() {
     if (loading) {
         return (
             <div className="bg-[#F5F4D6] min-h-[80vh]">
-                <Home_navbar />
+                <NavbarComum />
                 <Hourglass
                     visible={true}
                     height="120"
@@ -66,19 +66,19 @@ function Produtos() {
                     colors={['#10b981', '#065f46']}
                 />
             </div>
-        );
+        )
     }
 
     return (
         <div className="bg-[#F5F4D6] min-h-[80vh]">
-            <Home_navbar />
+            <NavbarComum />
 
             <div className="flex flex-col justify-center items-center">
                 <h3 className="text-3xl py-2 mt-6 w-full text-center bg-[#1E765A] text-[#F5F4D6]">Toda Compra Ajuda A Financiar a Viagem de um Voluntário!</h3>
 
                 {categorias.map(categoria => (
-                    <div key={categoria.id} className="flex flex-col justify-center items-center w-full mx-4 my-4">
-                        <p className="text-2xl font-bold my-4">Categoria - <span>{categoria.tipo}</span></p>
+                    <div key={categoria.id} className="flex flex-col justify-center items-center w-full my-4">
+                        <p className="text-2xl font-bold my-4">Categoria - <span>{categoria.nome}</span></p>
                         <Swiper
                             modules={[Pagination, Navigation]}
                             spaceBetween={12}
@@ -95,12 +95,15 @@ function Produtos() {
                                 1024: {
                                     slidesPerView: 4,
                                 },
+                                1536: {
+                                    slidesPerView: 5,
+                                },
                             }}
-                            className="w-[90%] h-[90%] bg-[#1E765A] py-8 px-12 rounded-2xl"
+                            className="w-[90%] h-full py-8 px-12 bg-[#1E765A] rounded-2xl"
                         >
-                            {produtos.filter(produto => produto.categoria?.tipo === categoria.tipo).map((produto) => (
+                            {produtos.filter(produto => produto.categoria?.nome === categoria.nome).map((produto) => (
                                 <SwiperSlide key={produto.id}>
-                                    <Home_Card prod={produto} />
+                                    <CardComum prod={produto} />
                                 </SwiperSlide>
                             ))}
                         </Swiper>
@@ -108,7 +111,7 @@ function Produtos() {
                 ))}
             </div>
         </div>
-    );
+    )
 }
 
 export default Produtos;

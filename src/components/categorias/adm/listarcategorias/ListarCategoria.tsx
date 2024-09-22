@@ -16,7 +16,7 @@ function ListarCategorias() {
     const { handleLogout, usuario } = useContext(AuthContext);
     const token = usuario.token;
 
-    async function buscarTemas() {
+    async function buscarCategorias() {
         try {
             await buscar('/categorias', setCategorias, {
                 headers: { authorization: token }
@@ -38,7 +38,7 @@ function ListarCategorias() {
 
     //Monitora os cards
     useEffect(() => {
-        buscarTemas();
+        buscarCategorias();
     }, [categorias.length])
 
     return (
@@ -63,7 +63,7 @@ function ListarCategorias() {
                 <div className="bg-[#F5F4D6] flex justify-center">
                     <div className="my-4 container flex flex-col">
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                             {categorias.map((categoria) => (
                                 <CardCategorias key={categoria.id} categoria={categoria} />
                             ))}

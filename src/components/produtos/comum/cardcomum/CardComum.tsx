@@ -6,7 +6,7 @@ interface CardProdutosProps {
     prod: Produto
 }
 
-function Home_Card({ prod }: CardProdutosProps) {
+function CardComum({ prod }: CardProdutosProps) {
 
     const { adicionarProduto } = useContext(CartContext)
 
@@ -18,7 +18,7 @@ function Home_Card({ prod }: CardProdutosProps) {
                 </div>
 
                 <div className='flex flex-col justify-center items-center w-full h-[50%]'>
-                    <span className="text-xl font-bold h-[20%]">{prod.nome}</span>
+                    <span className="text-xl font-bold h-[20%] text-center">{prod.nome}</span>
 
                     <div className="flex flex-col justify-evenly items-center w-full text-center h-[60%]">
                         <p className="px-4 text-lg font-semibold">Cor: <span className="font-normal">{prod.cor}</span></p>
@@ -39,10 +39,10 @@ function Home_Card({ prod }: CardProdutosProps) {
             </div>
 
             <div className="flex justify-center items-center w-full p-4">
-                <button onClick={() => adicionarProduto(prod)} className="text-xl border-2 border-[#2B4042] rounded-lg px-2 text-slate-100 bg-[#1E765A] hover:bg-emerald-900">Adicionar ao Carinho</button>
+                <button onClick={() => adicionarProduto(prod)} className="text-xl border-2 border-[#2B4042] rounded-lg px-2 text-slate-100 bg-[#1E765A] hover:bg-emerald-900">Adicionar ao Carrinho</button>
             </div>
         </div>
     )
 }
 
-export default Home_Card
+export default CardComum

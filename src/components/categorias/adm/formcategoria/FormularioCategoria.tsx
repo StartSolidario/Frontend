@@ -104,16 +104,29 @@ function FormularioCategoria() {
                     onSubmit={gerarNovaCategoria}
                 >
                     <div className="flex flex-col gap-2">
-                        <label htmlFor="tipo">Descrição do Categoria</label>
+                        <label>Nome da Categoria</label>
                         <input
                             type="text"
-                            placeholder="Descreva aqui sua Categoria"
-                            name='tipo'
+                            placeholder="Categoria"
+                            name='nome'
                             className="border-2 border-slate-700 p-2 rounded"
-                            value={categoria.tipo}
+                            value={categoria.nome}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
+
+                    <div className="flex flex-col gap-2">
+                        <label>Imagem/Icon da Categoria</label>
+                        <input
+                            type="text"
+                            placeholder="URL"
+                            name='imagem'
+                            className="border-2 border-slate-700 p-2 rounded"
+                            value={categoria.imagem}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        />
+                    </div>
+
                     <div className="flex justify-around">
                         <button
                             className="flex justify-center items-center w-[40%] py-2 text-slate-100 bg-emerald-500 hover:bg-emerald-800 border border-slate-700 rounded-lg"

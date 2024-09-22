@@ -1,5 +1,7 @@
 import { AuthProvider } from "./contexts/AuthContext"
+import { CartProvider } from "./contexts/CartContext"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { ToastContainer } from "react-toastify"
 
 import Navbar from "./components/navbar/Navbar"
 import Home from "./pages/home/Home"
@@ -20,12 +22,14 @@ import FormularioProduto from "./components/produtos/adm/formproduto/FormularioP
 import DeletarProduto from "./components/produtos/adm/deletarproduto/DeletarProduto"
 
 import 'react-toastify/dist/ReactToastify.css'
-import { ToastContainer } from "react-toastify"
+
 import EquipeContato from "./pages/equipecontato/EquipeContato"
-import { CartProvider } from "./contexts/CartContext"
-import Cart from "./components/carrinho/cart/Cart"
-import Produtos_Filtro from "./pages/produtos/Produtos_Filtro"
+
 import Produtos from "./pages/produtos/Produtos"
+import FiltroComum from "./components/produtos/comum/filtrocomum/FiltroComum"
+import FiltroAdm from "./components/produtos/adm/filtroadm/FiltroAdm"
+
+import Cart from "./components/carrinho/cart/Cart"
 
 function App() {
    //Codigo Typescript
@@ -60,7 +64,9 @@ function App() {
                         <Route path="/deletarproduto_adm/:id" element={<DeletarProduto />} />
 
                         <Route path="/produtos" element={<Produtos />} />
-                        <Route path="/produtos/nome/:keyword" element={<Produtos_Filtro />} />
+                        <Route path="/produtos/nome/:keyword" element={<FiltroComum />} />
+                        <Route path="/produtos_adm/nome/:keyword" element={<FiltroAdm />} />
+
                         <Route path="/cart" element={<Cart />} />
                      </Routes>
                   </div>

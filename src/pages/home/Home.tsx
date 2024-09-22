@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Carrossel from "../../components/carrossel/Carrossel"
-import Home_navbar from "../../components/produtos/comum/home_navbar/Home_navbar"
 import Produto from "../../models/Produto";
 import Categoria from "../../models/Categoria";
 import { buscar } from "../../services/service";
@@ -12,7 +11,8 @@ import 'swiper/css/bundle';
 import { Navigation, Pagination } from "swiper/modules";
 
 import '../produtos/Produtos.css';
-import Home_Card from "../../components/produtos/comum/home_card/Home_Card";
+import NavbarComum from "../../components/produtos/comum/navbarcomum/NavbarComum";
+import CardComum from "../../components/produtos/comum/cardcomum/CardComum";
 
 function Home() {
    const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -57,7 +57,8 @@ function Home() {
    if (loading) {
       return (
          <div className="bg-[#F5F4D6] min-h-[80vh]">
-            <Home_navbar />
+            <NavbarComum />
+            
             <Hourglass
                visible={true}
                height="120"
@@ -73,7 +74,7 @@ function Home() {
 
    return (
       <div className="bg-[#F5F4D6]">
-         <Home_navbar />
+         <NavbarComum />
 
          <div className="">            
             <h2 className="text-5xl text-center font-bold pt-4 text-gray-800"> Start Solidário: Unidos para Erradicar a Pobreza</h2>
@@ -91,7 +92,7 @@ function Home() {
 
                 {categorias.map(categoria => (
                     <div key={categoria.id} className="flex flex-col justify-center items-center w-full mx-4 my-4">
-                        <p className="text-4xl font-bold">Categoria - <span className="text-[#1E765A]">{categoria.tipo}</span></p>
+                        <p className="text-4xl font-bold">Categoria - <span className="text-[#1E765A]">{categoria.nome}</span></p>
                         <Swiper
                             modules={[Pagination, Navigation]}
                             spaceBetween={12}
@@ -99,21 +100,24 @@ function Home() {
                             navigation
                             pagination={{ clickable: true }}
                             breakpoints={{
-                                640: {
-                                    slidesPerView: 2,
-                                },
-                                768: {
-                                    slidesPerView: 3,
-                                },
-                                1024: {
-                                    slidesPerView: 4,
-                                },
-                            }}
-                            className="w-full h-[90%] border-[#2B4042] py-8 px-12 "
+                              640: {
+                                  slidesPerView: 2,
+                              },
+                              768: {
+                                  slidesPerView: 3,
+                              },
+                              1024: {
+                                  slidesPerView: 4,
+                              },
+                              1536: {
+                                  slidesPerView: 5,
+                              },
+                          }}
+                            className="w-full h-full py-8 px-12"
                         >
-                            {produtos.filter(produto => produto.categoria?.tipo === categoria.tipo).map((produto) => (
+                            {produtos.filter(produto => produto.categoria?.nome === categoria.nome).map((produto) => (
                                 <SwiperSlide key={produto.id}>
-                                    <Home_Card prod={produto} />
+                                    <CardComum prod={produto} />
                                 </SwiperSlide>
                             ))}
                         </Swiper>

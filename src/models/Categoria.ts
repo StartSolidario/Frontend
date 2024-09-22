@@ -3,6 +3,7 @@ import Produto from "./Produto"
 
 export default interface Categoria{
     id: number;
-    tipo: string;
+    nome: string;
+    imagem: string;
     produto?: Produto | null;
 }

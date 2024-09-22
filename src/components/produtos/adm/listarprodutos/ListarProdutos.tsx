@@ -8,6 +8,7 @@ import { ToastAlerta } from "../../../../utils/ToastAlerta";
 import AuthContext from "../../../../contexts/AuthContext";
 import CardProdutos from "../cardprodutos/CardProdutos";
 import Produto from "../../../../models/Produto";
+import NavbarAdm from "../navbaradm/NavbarAdm";
 
 function ListarProdutos() {
    const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -49,6 +50,8 @@ function ListarProdutos() {
                <Link className="my-4 py-4 px-4 border-2 rounded-lg border-[#2B4042] bg-[#1E765A] text-[#F5F4D6]" to={'/cadastroproduto_adm'}>Adicionar Novo Produto</Link>
             </div>
 
+            <NavbarAdm />
+
             {produtos.length === 0 && (
                <Hourglass
                   visible={true}
@@ -61,9 +64,9 @@ function ListarProdutos() {
                />
             )}
 
-            <div className="bg-[#F5F4D6] flex justify-center">
-               <div className="my-4 container flex flex-col">
-                  <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            <div className=" flex justify-center items-center bg-[#F5F4D6]">
+               <div className="m-4 container flex flex-col">
+                  <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
                      {produtos.map((produto) => (
                         <CardProdutos key={produto.id} prod={produto} />
                      ))}

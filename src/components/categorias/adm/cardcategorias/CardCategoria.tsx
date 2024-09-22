@@ -1,18 +1,21 @@
 import { Link } from "react-router-dom"
 import Categoria from "../../../../models/Categoria"
 
-
-interface CardCategoriasProps{
+interface CardCategoriasProps {
     categoria: Categoria
 }
 
 function CardCategoria({ categoria }: CardCategoriasProps) {
     return (
         <div className='border-2 border-[#2B4042] flex flex-col rounded-2xl overflow-hidden justify-between'>
-            <header className='py-2 px-6 bg-[#1E765A] text-white font-bold text-2xl'>
-                Categoria
+            <header className='py-2 bg-[#1E765A] text-white font-bold text-2xl text-center'>
+                Categoria - <span>{categoria.nome}</span>
             </header>
-            <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.tipo}</p>
+
+            <p className='pb-2 bg-[#1E765A] text-white font-bold text-2xl text-center'>Icon:</p>
+            <div className="flex justify-center items-center bg-slate-100">
+                <img className="w-2/5 h-full" src={categoria.imagem}></img>
+            </div>
 
             <div className="flex">
 

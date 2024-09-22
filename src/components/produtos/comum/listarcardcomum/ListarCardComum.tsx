@@ -6,9 +6,9 @@ import { ToastAlerta } from "../../../../utils/ToastAlerta";
 
 import AuthContext from "../../../../contexts/AuthContext";
 import Produto from "../../../../models/Produto";
-import Home_Card from "../home_card/Home_Card";
+import CardComum from "../cardcomum/CardComum";
 
-function Home_Lista() {
+function ListarCardComum() {
     const [produtos, setProdutos] = useState<Produto[]>([]);
  
     const { usuario, handleLogout } = useContext(AuthContext);
@@ -49,9 +49,9 @@ function Home_Lista() {
  
              <div className="bg-[#F5F4D6] flex justify-center">
                 <div className="my-4 container flex flex-col">
-                   <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
+                   <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
                       {produtos.map((produto) => (
-                         <Home_Card key={produto.id} prod={produto} />
+                         <CardComum key={produto.id} prod={produto} />
                       ))}
                    </div>
                 </div>
@@ -61,4 +61,4 @@ function Home_Lista() {
     )
  }
 
-export default Home_Lista
+export default ListarCardComum
