@@ -24,7 +24,7 @@ function CardCart({ item }: CardProdutosProps) {
                             currency: 'BRL'
                         }).format(item.preco)}
                     </h3>
-                    <p className='text-sm italic text-center'>Categoria: {item.categoria?.tipo} </p>
+                    <p className='text-sm italic text-center'>Categoria: {item.categoria?.nome} </p>
                     <h4 className='my-2 text-center'>
                         <span className="font-semibold">Quantidade:</span> {item.quantidade} 
                     </h4>
