@@ -30,6 +30,7 @@ import FiltroComum from "./components/produtos/comum/filtrocomum/FiltroComum"
 import FiltroAdm from "./components/produtos/adm/filtroadm/FiltroAdm"
 
 import Cart from "./components/carrinho/cart/Cart"
+import FiltroCategoria from "./components/categorias/comum/filtrocategoria/FiltroCategoria"
 
 function App() {
    //Codigo Typescript
@@ -66,6 +67,8 @@ function App() {
                         <Route path="/produtos" element={<Produtos />} />
                         <Route path="/produtos/nome/:keyword" element={<FiltroComum />} />
                         <Route path="/produtos_adm/nome/:keyword" element={<FiltroAdm />} />
+
+                        <Route path="/categorias/:id" element={<FiltroCategoria />} />
 
                         <Route path="/cart" element={<Cart />} />
                      </Routes>

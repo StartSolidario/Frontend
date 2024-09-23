@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Categoria from "../../../../models/Categoria"
 
 interface CardCategoriasProps {
@@ -5,8 +6,16 @@ interface CardCategoriasProps {
 }
 
 function CardCategoriaComum({ categoria }: CardCategoriasProps) {
+    
+    const navigate = useNavigate();
+
+    const handleCardClick = () => {
+        // Redireciona para a página de produtos da categoria
+        navigate(`/categorias/${categoria.id}`);
+    }
+
     return (
-        <div className='flex flex-col justify-center items-center'>
+        <div className='flex flex-col justify-center items-center' onClick={handleCardClick}>
             <div className="w-1/3 flex justify-center items-center">
                 <img className="w-full h-full" src={categoria.imagem}></img>
             </div>

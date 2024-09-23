@@ -1,10 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import { Hourglass } from 'react-loader-spinner';
 import Categoria from "../../../../models/Categoria";
 import { buscar } from "../../../../services/service";
-import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../../../contexts/AuthContext";
-import { ToastAlerta } from "../../../../utils/ToastAlerta";
 import CardCategoriaComum from "../cardcategoriacomum/CardCategoriaComum";
 
 function ListarCardCategoriaComum() {
