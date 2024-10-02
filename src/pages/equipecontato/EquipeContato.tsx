@@ -3,34 +3,34 @@ import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react"
 function EquipeContato() {
     return (
         <div className="bg-[#F5F4D6]">
-            <h2 className="container text-center text-xl lg:text-2xl xl:text-3xl font-semibold py-4 m-auto">Tem uma sugestão de melhoria ou precisa falar conosco? Nos mande uma Mensagem!</h2>
+            <h2 className="container text-center text-base md:text-xl lg:text-2xl xl:text-3xl font-semibold py-4 m-auto">Tem uma sugestão de melhoria ou precisa falar conosco? Nos mande uma Mensagem!</h2>
             <div className="text-white font-bold flex justify-center">
-                <div className="w-2/3 lg:w-1/3 border rounded-lg lg:rounded-l-lg lg:rounded-r-none border-black bg-[#1E765A]">
+                <div className="w-4/5 md:w-2/3 lg:w-2/5 border rounded-lg lg:rounded-l-lg lg:rounded-r-none border-black bg-[#1E765A]">
                     <form id="formulario" action="https://formsubmit.co/d6dbb342d9b865d203b0507cc6c6ed2a" method="POST" className="flex flex-col justify-center items-center">
 
                         <input type="hidden" name="_captcha" value="false" />
 
                         <label className="flex item-center justify-center lg:text-lg text-white my-2 pt-2" htmlFor="name">Nome: </label>
-                        <input className="flex item-center text-center justify-center rounded-2xl text-black w-4/5 py-2" id="name" type="text" name="name" placeholder="Digite seu nome" />
+                        <input className="text-center rounded-2xl text-black w-4/5 py-2" id="name" type="text" name="name" placeholder="Digite seu nome" />
                         <span id="txtNome"></span>
 
                         <label className="flex item-center justify-center lg:text-lg text-white my-2 pt-2" htmlFor="email">E-mail: </label>
-                        <input className="flex item-center text-center justify-center rounded-2xl text-black w-4/5 py-2" id="email" type="text" name="email" placeholder="Digite seu email" />
+                        <input className="text-center rounded-2xl text-black w-4/5 py-2" id="email" type="text" name="email" placeholder="Digite seu email" />
                         <span id="txtEmail"></span>
 
                         <label className="flex item-center justify-center lg:text-lg text-white my-2 pt-2" htmlFor="subject">Assunto: </label>
-                        <input className="flex item-center text-center justify-center rounded-2xl text-black w-4/5 py-2" id="subject" type="text" name="subject" placeholder="Digite o título da messagem" />
+                        <input className="text-center rounded-2xl text-black w-4/5 py-2" id="subject" type="text" name="subject" placeholder="Digite o título da messagem" />
                         <span id="txtSubject"></span>
 
                         <label className="flex item-center justify-center lg:text-lg text-white my-2 pt-2" htmlFor="message">Mensagem: </label>
-                        <textarea className="flex item-center text-center justify-center rounded-2xl text-black w-4/5 py-2" id="message" name="message" placeholder="Digite sua messagem"></textarea>
+                        <textarea className="text-center rounded-2xl text-black w-4/5 py-2" id="message" name="message" placeholder="Digite sua messagem"></textarea>
 
                         <div className="flex item-center justify-center w-1/2 m-4">
                             <button className="w-full h-full lg:text-lg p-2 border-2 rounded-xl border-white hover:bg-[#80af81]" type="submit">Enviar</button>
                         </div>
                     </form>
                 </div>
-                <div className="hidden lg:flex justify-center item-center lg:w-1/5 border border-l-0 rounded-r-lg border-black">
+                <div className="hidden lg:flex justify-center item-center lg:w-1/4 border border-l-0 rounded-r-lg border-black">
                     <img className="w-full" src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/startsolidariosfundo.png" alt="logo StartSolidário" ></img>
                 </div>
             </div>
@@ -39,7 +39,7 @@ function EquipeContato() {
                 <h2 className="flex item-center justify-center font-bold text-2xl lg:text-3xl mt-4">Conheça nossa equipe!</h2>
                 <div className="flex flex-col lg:flex-row flex-wrap justify-evenly items-center">
                     <div className="flex flex-col justify-center items-center w-3/4 lg:w-[30%] rounded-lg p-6 my-4 border-2 border-black bg-[#2B4042] hover:bg-[#F8C311]">
-                        <div className="w-1/5 rounded-full overflow-hidden bg-white">
+                        <div className="w-2/5 sm:w-1/5 rounded-full overflow-hidden bg-white">
                             <img
                                 src="https://ik.imagekit.io/startsolidario/fotos%20equipe/Captura%20de%20tela%202024-09-06%20141234.png?updatedAt=1727241302334"
                                 alt="Luiz"
@@ -58,7 +58,7 @@ function EquipeContato() {
                     </div>
 
                     <div className="flex flex-col justify-center items-center w-3/4 lg:w-[30%] rounded-lg p-6 my-4 border-2 border-black bg-[#2B4042] hover:bg-[#F8C311]">
-                        <div className="w-1/5 rounded-full overflow-hidden bg-white">
+                        <div className="w-2/5 sm:w-1/5 rounded-full overflow-hidden bg-white">
                             <img
                                 src="https://ik.imagekit.io/startsolidario/fotos%20equipe/Imagem%20do%20WhatsApp%20de%202024-09-06%20%C3%A0(s)%2012.05.38_953507ed.jpg?updatedAt=1727241118387"
                                 alt="Samuel"
@@ -77,7 +77,7 @@ function EquipeContato() {
                     </div>
 
                     <div className="flex flex-col justify-center items-center w-3/4 lg:w-[30%] rounded-lg p-6 my-4 border-2 border-black bg-[#2B4042] hover:bg-[#F8C311]">
-                        <div className="w-1/5 rounded-full overflow-hidden bg-white">
+                        <div className="w-2/5 sm:w-1/5 rounded-full overflow-hidden bg-white">
                             <img
                                 src="https://ik.imagekit.io/startsolidario/fotos%20equipe/Imagem%20do%20WhatsApp%20de%202024-09-06%20%C3%A0(s)%2011.57.42_df836fd8.jpg?updatedAt=1727241262625"
                                 alt="Roberdan"
@@ -96,7 +96,7 @@ function EquipeContato() {
                     </div>
 
                     <div className="flex flex-col justify-center items-center w-3/4 lg:w-[30%] rounded-lg p-6 my-4 border-2 border-black bg-[#2B4042] hover:bg-[#F8C311]">
-                        <div className="w-1/5 rounded-full overflow-hidden bg-white">
+                        <div className="w-2/5 sm:w-1/5 rounded-full overflow-hidden bg-white">
                             <img
                                 src="https://ik.imagekit.io/startsolidario/fotos%20equipe/Imagem%20do%20WhatsApp%20de%202024-09-06%20%C3%A0(s)%2011.57.36_4e8e7579.jpg?updatedAt=1727241281629"
                                 alt="Jean"
@@ -115,7 +115,7 @@ function EquipeContato() {
                     </div>
 
                     <div className="flex flex-col justify-center items-center w-3/4 lg:w-[30%] rounded-lg p-6 my-4 border-2 border-black bg-[#2B4042] hover:bg-[#F8C311]">
-                        <div className="w-1/5 rounded-full overflow-hidden bg-white">
+                        <div className="w-2/5 sm:w-1/5 rounded-full overflow-hidden bg-white">
                             <img
                                 src="https://ik.imagekit.io/startsolidario/fotos%20equipe/Imagem%20do%20WhatsApp%20de%202024-09-06%20%C3%A0(s)%2012.24.14_284239f7.jpg?updatedAt=1727241165253"
                                 alt="Matheus"
