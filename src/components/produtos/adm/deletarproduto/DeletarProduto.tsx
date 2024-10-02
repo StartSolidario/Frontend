@@ -75,14 +75,14 @@ function DeletarProduto() {
 
    return (
       <div className="bg-[#F5F4D6] min-h-[80vh] py-8">
-         <div className='mx-auto w-1/3'>
+         <div className='mx-auto w-3/4 md:w-2/4 lg:w-1/3'>
             <h1 className='py-2 text-4xl text-center'>Deletar Produto</h1>
 
             <p className='mb-4 font-semibold text-center'>Você tem certeza de que deseja apagar o produto a seguir?</p>
 
             <div className='border-2 border-[#2B4042] rounded-2xl flex flex-col justify-between overflow-hidden'>
                <div className="flex flex-col w-full bg-[#1E765A] text-white py-2 px-4 items-center justify-center gap-4">
-                  <h3 className='py-2 px-6 font-bold text-2xl text-center uppercase '>{produto.nome}</h3>
+                  <h3 className='py-2 px-6 font-bold text-lg md:text-xl lg:text-2xl text-center uppercase'>{produto.nome}</h3>
                   <div className="w-[80%] bg-[#2B4042]">
                      <img src={produto.foto} className='w-full h-full p-4' alt="Imagem Produto" />
                   </div>
@@ -93,7 +93,7 @@ function DeletarProduto() {
                   <p className="text-base font-semibold">Cor: <span className="font-normal">{produto.cor}</span></p>
                   <p className="text-base font-semibold">Quantidade: <span className="font-normal">{produto.quantidade}</span></p>
                   <p className="text-base font-semibold">preco: <span className="font-normal">{produto.preco}</span></p>
-                  <p className="text-base font-semibold">categoria: <span className="font-normal">{produto.categoria?.tipo}</span></p>
+                  <p className="text-base font-semibold">categoria: <span className="font-normal">{produto.categoria?.nome}</span></p>
                </div>
 
                <div className="flex">

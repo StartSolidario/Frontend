@@ -81,12 +81,12 @@ function FiltroCategoria() {
 
             <div>
                 <div className="bg-[#F5F4D6] flex flex-col justify-center items-center">
-                    <p className="text-2xl text-white text-center font-bold w-full bg-[#1E765A] px-8 py-2">
+                    <p className="text-lg md:text-xl lg:text-2xl text-white text-center font-bold w-full bg-[#1E765A] px-8 py-2">
                         Produtos da Categoria - <span>{categoria?.nome || "Nome não disponível"}</span>
                     </p>
 
-                    <div className="m-4 container flex flex-col">
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+                    <div className="flex flex-col container">
+                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 my-4 mx-8'>
                             {produtos.map((produto) => (
                                 <CardComum key={produto.id} prod={produto} />
                             ))}

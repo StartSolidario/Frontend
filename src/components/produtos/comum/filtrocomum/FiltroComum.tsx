@@ -46,7 +46,7 @@ function FiltroComum() {
           <NavbarComum />
  
           <div>
-             <p className="text-xl w-full bg-[#1E765A] text-white px-8 py-2">
+             <p className="text-base md:text-lg lg:text-xl w-full bg-[#1E765A] text-white px-8 py-2">
                 Caminho-Filtragem: <span className="font-semibold">{window.location.pathname}</span>
              </p>
  

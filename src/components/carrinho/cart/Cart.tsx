@@ -13,12 +13,11 @@ function Cart() {
                 Carrinho de Compras
             </h1>
 
-            <h2 className="text-2xl text-center my-4">
+            <h2 className="text-2xl text-center">
                 {items.length === 0 ? 'O Carrinho está vazio!' : ''}
             </h2>
 
-            <div className='container mx-auto my-4 grid grid-cols-1 
-                            md:grid-cols-2 lg:grid-cols-5 gap-4'>
+            <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4'>
                 {
                     items.map(produto => (
                         <CardCart key={produto.id} item={produto} />

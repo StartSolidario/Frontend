@@ -32,7 +32,7 @@ function Login() {
 
    return (
       <div className='flex justify-center items-center min-h-[80vh] bg-[#F5F4D6]'>
-         <div className='flex rounded-3xl  w-8/12 m-auto'>
+         <div className='flex rounded-3xl w-4/5 md:w-8/12 m-auto'>
             <div className='hidden lg:w-3/5 lg:block'>
                <img className='rounded-l-3xl w-full h-full border lg:border-2 border-r-0 lg:border-r-0 border-black' src='https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/diferentes-pessoas-fazendo-trabalho-voluntario_23-2149012164.png?updatedAt=1724776780689' />
             </div>

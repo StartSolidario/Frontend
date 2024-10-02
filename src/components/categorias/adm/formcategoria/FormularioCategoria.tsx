@@ -100,9 +100,7 @@ function FormularioCategoria() {
                     {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
                 </h1>
 
-                <form className="flex flex-col gap-4 w-1/2"
-                    onSubmit={gerarNovaCategoria}
-                >
+                <form className="flex flex-col gap-4 w-4/5 md:w-3/4 lg:w-1/2" onSubmit={gerarNovaCategoria}>
                     <div className="flex flex-col gap-2">
                         <label>Nome da Categoria</label>
                         <input

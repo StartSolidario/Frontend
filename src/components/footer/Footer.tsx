@@ -18,7 +18,8 @@ function Footer() {
          <div className="flex justify-center items-center">
             <a href="https://github.com/StartSolidario" target="_blank" className="flex justify-center items-center">
                <p className="px-2 text-lg md:text-xl lg:text-2xl hover:underline">Github</p>
-               <GithubLogo size={40} weight='bold' />
+               <div className="hidden md:block"><GithubLogo size={40} weight='bold'/></div>
+               <div className="block md:hidden"><GithubLogo size={30} weight='bold'/></div>
             </a>
          </div>
       </div>

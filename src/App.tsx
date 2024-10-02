@@ -21,16 +21,19 @@ import ListarProdutos from "./components/produtos/adm/listarprodutos/ListarProdu
 import FormularioProduto from "./components/produtos/adm/formproduto/FormularioProduto"
 import DeletarProduto from "./components/produtos/adm/deletarproduto/DeletarProduto"
 
+import ListarViagens from "./components/viagens/adm/listarviagens/ListarViagens"
+
 import 'react-toastify/dist/ReactToastify.css'
 
 import EquipeContato from "./pages/equipecontato/EquipeContato"
+
+import FiltroCategoria from "./components/categorias/comum/filtrocategoria/FiltroCategoria"
 
 import Produtos from "./pages/produtos/Produtos"
 import FiltroComum from "./components/produtos/comum/filtrocomum/FiltroComum"
 import FiltroAdm from "./components/produtos/adm/filtroadm/FiltroAdm"
 
 import Cart from "./components/carrinho/cart/Cart"
-import FiltroCategoria from "./components/categorias/comum/filtrocategoria/FiltroCategoria"
 
 function App() {
    //Codigo Typescript
@@ -63,6 +66,8 @@ function App() {
                         <Route path="/cadastroproduto_adm" element={<FormularioProduto />} />
                         <Route path="/editarproduto_adm/:id" element={<FormularioProduto />} />
                         <Route path="/deletarproduto_adm/:id" element={<DeletarProduto />} />
+
+                        <Route path="/viagens_adm" element={<ListarViagens />}/>
 
                         <Route path="/produtos" element={<Produtos />} />
                         <Route path="/produtos/nome/:keyword" element={<FiltroComum />} />

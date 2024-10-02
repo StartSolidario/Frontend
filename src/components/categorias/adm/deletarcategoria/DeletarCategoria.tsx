@@ -47,10 +47,6 @@ function DeletarCategoria() {
         navigate('/categorias_adm/')
     }
 
-    /**
-     * Criamos a função deletarTema, responsável por deletar 
-     * um tema da aplicação (DELETE).
-     */
     async function deletarCategoria() {
         setIsLoading(true)
 
@@ -72,8 +68,8 @@ function DeletarCategoria() {
     }
 
     return (
-        <div className="bg-[#F5F4D6] min-h-[80vh]">
-            <div className='mx-auto w-1/3'>
+        <div className="bg-[#F5F4D6] min-h-[80vh] py-8">
+            <div className='mx-auto w-3/4 md:w-2/4 lg:w-1/3'>
                 <h1 className='pt-8 pb-4 text-4xl text-center'>Deletar Categoria</h1>
 
                 <p className='mb-4 font-semibold text-center'>Você tem certeza de que deseja apagar a Categoria a seguir?</p>

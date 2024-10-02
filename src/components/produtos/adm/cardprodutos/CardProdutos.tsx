@@ -1,19 +1,40 @@
 import { Link } from "react-router-dom"
 import Produto from "../../../../models/Produto"
+import { useState } from "react";
 
 interface CardProdutosProps {
    prod: Produto
 }
 
 function CardProdutos({ prod }: CardProdutosProps) {
+   const [isImageVisible, setIsImageVisible] = useState(true);
+
+   const handleImageClick = () => {
+      if (isImageVisible) {
+         setIsImageVisible(false)
+      } else {
+         setIsImageVisible(true)
+      }
+   }
+
    return (
-      <div className='flex flex-col border-2 border-[#2B4042] rounded-2xl overflow-hidden h-[70vh]'>
+      <div className='flex flex-col border-2 border-[#2B4042] rounded-2xl overflow-hidden h-[80vh]'>
          <div className="flex flex-col justify-center items-center h-full">
 
             <div className="flex flex-col justify-center items-center w-full h-[60%] bg-[#1E765A] text-white">
-               <h3 className='font-bold text-2xl text-center uppercase '>{prod.nome}</h3>
-               <div className="w-[50%] md:w-[80%] bg-[#2B4042]">
-                  <img src={prod.foto} className='w-full h-full p-1' alt="Imagem Produto" />
+               <h3 className='font-bold text-lg md:text-xl lg:text-2xl text-center uppercase '>{prod.nome}</h3>
+               <div className="w-[40%] md:w-[75%] bg-[#2B4042]">
+                  {isImageVisible && (
+                     <img
+                        src={prod.foto}
+                        className="w-full h-full p-1"
+                        alt="Imagem Produto"
+                        onClick={handleImageClick}
+                     />
+                  )}
+                  {!isImageVisible && (
+                     <div onClick={handleImageClick} className="text-center text-white bg-[#1E765A]">Abrir imagem</div>
+                  )}
                </div>
             </div>
 
@@ -23,12 +44,12 @@ function CardProdutos({ prod }: CardProdutosProps) {
                <p className="text-base font-semibold">Cor: <span className="font-normal">{prod.cor}</span></p>
                <p className="text-base font-semibold">Quantidade: <span className="font-normal">{prod.quantidade}</span></p>
                <p className='text-base font-semibold'>Preço: <span className="font-normal">
-                     {Intl.NumberFormat('pt-BR',
-                        {
-                           style: 'currency',
-                           currency: 'BRL'
-                        }).format(prod.preco)}
-                  </span>
+                  {Intl.NumberFormat('pt-BR',
+                     {
+                        style: 'currency',
+                        currency: 'BRL'
+                     }).format(prod.preco)}
+               </span>
                </p>
                <p className="text-base font-semibold">Categoria: <span className="font-normal">{prod.categoria?.nome}</span></p>
             </div>

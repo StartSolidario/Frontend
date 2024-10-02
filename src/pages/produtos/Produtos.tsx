@@ -74,7 +74,7 @@ function Produtos() {
             <NavbarComum />
 
             <div className="flex flex-col justify-center items-center">
-                <h3 className="text-3xl py-2 mt-6 w-full text-center bg-[#1E765A] text-[#F5F4D6]">Toda Compra Ajuda A Financiar a Viagem de um Voluntário!</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl xl:text-3xl py-2 px-4 mt-6 w-full text-center bg-[#1E765A] text-[#F5F4D6]">Toda Compra Ajuda A Financiar a Viagem de um Voluntário!</h3>
 
                 {categorias.map(categoria => (
                     <div key={categoria.id} className="flex flex-col justify-center items-center w-full my-4">

@@ -26,7 +26,7 @@ function NavbarAdm() {
 
     return (
         <div className="flex flex-col justify-center items-center py-4">
-            <form onSubmit={searchHandler} className="relative flex w-3/5 rounded-xl border-[#1E765A]">
+            <form onSubmit={searchHandler} className="relative flex w-[90%] md:w-3/4 lg:w-3/5 rounded-xl border-[#1E765A]">
                 <input
                     className="mx-2 w-full rounded-xl border px-6 py-2 text-base font-medium outline-none placeholder:font-medium focus:border-gray-500"
                     type="search"

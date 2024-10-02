@@ -8,7 +8,7 @@ function Sobre() {
                 </h1>
 
                 <div className="flex items-center justify-between max-w-4xl w-full">
-                    <p className="text-white text-center text-base md:text-lg lg:text-xl">
+                    <p className="text-white text-center text-base md:text-lg lg:text-xl px-4">
                         O Start Solidário é muito mais que um e-commerce, é um movimento que une solidariedade e propósito. Nossa plataforma conecta quem quer ajudar com quem mais precisa, oferecendo a oportunidade de transformar vidas através de doações, voluntariado e compras com significado.
                     </p>
                     
@@ -30,7 +30,7 @@ function Sobre() {
                         <h2 className="text-lg md:text-xl lg:text-2xl font-bold pt-2 text-center text-white">
                             Como Você Pode Fazer a Diferença no StartSolidário?
                         </h2>
-                        <p className="text-base md:text-lg lg:text-xl leading-relaxed py-2 text-center text-white">
+                        <p className="text-base md:text-lg lg:text-xl leading-relaxed py-2 px-4 text-center text-white">
                             Aqui, você não apenas adquire produtos ou pacotes de viagem, você participa de algo maior. Cada compra e cada gesto de doação reverberam em impacto social, apoiando causas que fazem a diferença na vida de muitas pessoas. Seja comprando para si ou doando para os outros, você está investindo em um futuro mais justo e inclusivo.
                         </p>
                     </div>
@@ -61,7 +61,7 @@ function Sobre() {
                         <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-center text-white pt-2">
                             Nosso Propósito
                         </h3>
-                        <p className="text-base md:text-lg lg:text-xl leading-relaxed text-center text-white py-2">
+                        <p className="text-base md:text-lg lg:text-xl leading-relaxed text-center text-white py-2 px-4">
                             Nosso propósito é criar um ambiente onde a solidariedade seja acessível e tangível, permitindo que todos possam contribuir com o que têm de melhor: seu tempo, recursos ou disposição para ajudar. Faça parte dessa corrente do bem e descubra como pequenas ações podem gerar grandes mudanças.
                         </p>
                     </div>
