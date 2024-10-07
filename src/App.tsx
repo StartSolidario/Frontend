@@ -22,6 +22,8 @@ import FormularioProduto from "./components/produtos/adm/formproduto/FormularioP
 import DeletarProduto from "./components/produtos/adm/deletarproduto/DeletarProduto"
 
 import ListarViagens from "./components/viagens/adm/listarviagens/ListarViagens"
+import FormularioViagem from "./components/viagens/adm/formviagem/FormularioViagem"
+import DeletarViagem from "./components/viagens/adm/deletarviagem/DeletarViagem"
 
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -68,6 +70,9 @@ function App() {
                         <Route path="/deletarproduto_adm/:id" element={<DeletarProduto />} />
 
                         <Route path="/viagens_adm" element={<ListarViagens />}/>
+                        <Route path="/cadastroviagem_adm" element={<FormularioViagem />}/>
+                        <Route path="/editarviagem_adm/:id" element={<FormularioViagem />}/>
+                        <Route path="/deletarviagem_adm/:id" element={<DeletarViagem />}/>
 
                         <Route path="/produtos" element={<Produtos />} />
                         <Route path="/produtos/nome/:keyword" element={<FiltroComum />} />
