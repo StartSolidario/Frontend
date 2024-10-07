@@ -13,6 +13,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import '../produtos/Produtos.css';
 import NavbarComum from "../../components/produtos/comum/navbarcomum/NavbarComum";
 import CardComum from "../../components/produtos/comum/cardcomum/CardComum";
+import ListaCardViagemComum from "../../components/viagens/comum/listacardviagemcomum/ListaCardViagemComum";
 
 function Home() {
    const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -80,8 +81,8 @@ function Home() {
             <h2 className="text-xl md:text-3xl lg:text-4xl text-center font-bold pt-4 text-gray-800"> Start Solidário: Unidos para Erradicar a Pobreza</h2>
             <p className="text-base md:text-lg lg:text-xl pt-4 pb-4 text-center py-6 text-gray-700">Você deseja ser parte da transformação? Explore nossas missões atuais e faça a diferença hoje mesmo:</p></div>
 
-            <div className=" flex justify-center text-center items-center bg-[#1E765A] py-4 border-2 border-[#2B4042]">
-               <Carrossel />
+            <div className="flex justify-center items-center text-center w-full lg:w-4/5 mx-auto">
+               <ListaCardViagemComum />
             </div>
 
          <div className="bg-[#F5F4D6] min-h-[80vh]">
