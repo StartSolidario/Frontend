@@ -22,6 +22,14 @@ function CardViagemComum({ viagem }: CardViagensProps) {
                         <p className="text-center font-semibold w-full pt-2">Detalhes:</p>
                         <span className="text-center w-full p-2">{viagem.detalhes}</span>
                     </div>
+
+                    <div className="hidden sm:flex flex-col justify-center items-center py-4">
+                        <p className="text-xl font-bold text-center pb-4">Obrigações e beneficios:</p>
+                        <div className="flex flex-row justify-evenly items-center w-full">
+                            <p className="text-center py-2 px-6 w-1/2">O voluntario deve oferecer seus serviços 4 dias por semana, 5 horas por dia</p>
+                            <p className="text-center py-2 px-6 w-1/2">O voluntario que veio de fora da cidade tera moradia e alimentação garantida</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div>
@@ -35,7 +43,7 @@ function CardViagemComum({ viagem }: CardViagensProps) {
             </div>
 
             <div className="hidden md:block h-full">
-                <img src={viagem.imagem} className="w-full h-full" alt="Imagem Destino"/>
+                <img src={viagem.imagem} className="w-full h-full" alt="Imagem Destino" />
             </div>
         </div>
     )

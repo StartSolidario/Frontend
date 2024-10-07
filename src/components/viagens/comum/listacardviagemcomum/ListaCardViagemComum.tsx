@@ -47,7 +47,7 @@ function ListaCardViagemComum() {
         >
             {viagens.map((viagem) => (
                 <SwiperSlide key={viagem.id}>
-                    <div className="mx-12 bg-[#1E765A] border-2 border-[#2B4042]">
+                    <div className="mx-12 bg-stone-200 border-2 border-[#2B4042]">
                         <CardViagemComum viagem={viagem} />
                     </div>
                 </SwiperSlide>
