@@ -31,12 +31,10 @@ function ListarCardCategoriaComum() {
     return (
         <>
             <div className="flex justify-center items-center">
-                <div className="w-2/3">
-                    <div className="flex container">
-                        {categorias.map((categoria) => (
-                            <CardCategoriaComum key={categoria.id} categoria={categoria} />
-                        ))}
-                    </div>
+                <div className="flex w-full md:w-3/4 lg:w-2/3 px-4">
+                    {categorias.map((categoria) => (
+                        <CardCategoriaComum key={categoria.id} categoria={categoria} />
+                    ))}
                 </div>
             </div>
         </>

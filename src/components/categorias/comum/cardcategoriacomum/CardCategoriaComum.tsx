@@ -16,10 +16,10 @@ function CardCategoriaComum({ categoria }: CardCategoriasProps) {
 
     return (
         <div className='flex flex-col justify-center items-center' onClick={handleCardClick}>
-            <div className="w-1/3 flex justify-center items-center">
+            <div className="w-1/2 lg:w-1/3 flex justify-center items-center">
                 <img className="w-full h-full" src={categoria.imagem}></img>
             </div>
-            <p className='font-bold text-xl'>{categoria.nome}</p>
+            <p className='font-bold text-base sm:text-lg lg:text-xl text-center w-full'>{categoria.nome}</p>
         </div>
     )
 }

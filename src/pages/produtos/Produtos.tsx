@@ -95,9 +95,6 @@ function Produtos() {
                                 1024: {
                                     slidesPerView: 4,
                                 },
-                                1536: {
-                                    slidesPerView: 5,
-                                },
                             }}
                             className="w-[90%] h-full py-8 px-12 bg-[#1E765A] rounded-2xl"
                         >

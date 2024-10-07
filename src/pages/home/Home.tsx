@@ -108,9 +108,6 @@ function Home() {
                               1024: {
                                   slidesPerView: 4,
                               },
-                              1536: {
-                                  slidesPerView: 5,
-                              },
                           }}
                             className="w-full h-full py-8 px-12"
                         >
