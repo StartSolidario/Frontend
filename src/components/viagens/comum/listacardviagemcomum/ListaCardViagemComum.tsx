@@ -39,7 +39,7 @@ function ListaCardViagemComum() {
 
             loop={true}
             autoplay={{
-                delay: 7500,
+                delay: 500,
                 disableOnInteraction: false,
             }}
 

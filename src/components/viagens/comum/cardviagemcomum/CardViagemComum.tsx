@@ -10,8 +10,12 @@ function CardViagemComum({ viagem }: CardViagensProps) {
     return (
         <div className="grid grid-cols-3 justify-center items-center">
             <div className="col-span-3 md:col-span-2 flex flex-col justify-center items-center p-2">
-                <div>
+                <div className="flex flex-col">
                     <h1 className="font-bold text-2xl">Missão - <span>{viagem.destino}</span></h1>
+
+                    <div className="flex md:hidden">
+                        <img src={viagem.imagem} className="w-full h-2/3" alt="Imagem Destino" />
+                    </div>
 
                     <div className="flex flex-col sm:flex-row justify-evenly items-center w-full">
                         <p className="p-2 font-semibold">Partida - <span className="font-normal sm:font-semibold">{viagem.data_partida}</span></p>
