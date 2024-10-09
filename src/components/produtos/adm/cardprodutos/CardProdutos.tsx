@@ -57,7 +57,7 @@ function CardProdutos({ prod }: CardProdutosProps) {
          </div>
 
          <div className="flex">
-            <Link to={`/editarproduto_adm/${prod.id}`} className='w-full text-slate-100 bg-emerald-500 hover:bg-emerald-800 flex items-center justify-center py-2'>
+            <Link to={`/editarproduto_adm/${prod.id}`} className='w-full text-slate-100 bg-emerald-600 hover:bg-emerald-800 flex items-center justify-center py-2'>
                <button>Editar</button>
             </Link>
             <Link to={`/deletarproduto_adm/${prod.id}`} className='w-full text-slate-100 bg-yellow-800 hover:bg-yellow-950 flex items-center justify-center py-2'>

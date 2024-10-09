@@ -2,7 +2,7 @@ import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react"
 
 function EquipeContato() {
     return (
-        <div className="bg-[#F5F4D6]">
+        <div className="bg-yellow-100">
             <h2 className="container text-center text-base md:text-xl lg:text-2xl xl:text-3xl font-semibold py-4 m-auto">Tem uma sugestão de melhoria ou precisa falar conosco? Nos mande uma Mensagem!</h2>
             <div className="text-white font-bold flex justify-center">
                 <div className="w-4/5 md:w-2/3 lg:w-2/5 border rounded-lg lg:rounded-l-lg lg:rounded-r-none border-black bg-[#1E765A]">

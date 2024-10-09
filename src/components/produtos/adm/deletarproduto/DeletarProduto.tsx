@@ -74,7 +74,7 @@ function DeletarProduto() {
    }
 
    return (
-      <div className="bg-[#F5F4D6] min-h-[80vh] py-8">
+      <div className="bg-yellow-100 min-h-[80vh] py-8">
          <div className='mx-auto w-3/4 md:w-2/4 lg:w-1/3'>
             <h1 className='py-2 text-4xl text-center'>Deletar Produto</h1>
 
@@ -103,7 +103,7 @@ function DeletarProduto() {
                      Não
                   </button>
                   <button
-                     className='w-full text-slate-100 bg-emerald-500 hover:bg-emerald-800 flex items-center justify-center py-2'
+                     className='w-full text-slate-100 bg-emerald-600 hover:bg-emerald-800 flex items-center justify-center py-2'
                      onClick={deletarProduto}>
 
                      {isLoading ?

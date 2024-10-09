@@ -94,7 +94,7 @@ function FormularioCategoria() {
     }
 
     return (
-        <div className="bg-[#F5F4D6] min-h-[80vh]">
+        <div className="bg-yellow-100 min-h-[80vh]">
             <div className="flex flex-col justify-center items-center mx-auto container">
                 <h1 className="my-8 text-4xl text-center">
                     {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
@@ -127,7 +127,7 @@ function FormularioCategoria() {
 
                     <div className="flex justify-around">
                         <button
-                            className="flex justify-center items-center w-[40%] py-2 text-slate-100 bg-emerald-500 hover:bg-emerald-800 border border-slate-700 rounded-lg"
+                            className="flex justify-center items-center w-[40%] py-2 text-slate-100 bg-emerald-600 hover:bg-emerald-800 border border-slate-700 rounded-lg"
                             type="submit">
 
                             {isLoading ? <RotatingLines

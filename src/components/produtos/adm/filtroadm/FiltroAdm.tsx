@@ -42,9 +42,9 @@ function FiltroAdm() {
     );
 
     return (
-        <div className="bg-[#F5F4D6] min-h-[80vh]">
+        <div className="bg-yellow-100 min-h-[80vh]">
             <div className="w-full flex justify-center">
-                <Link className="my-4 py-4 px-4 border-2 rounded-lg border-[#2B4042] bg-[#1E765A] text-[#F5F4D6]" to={'/cadastroproduto_adm'}>Adicionar Novo Produto</Link>
+                <Link className="my-4 py-4 px-4 border-2 rounded-lg border-[#2B4042] bg-[#1E765A] text-white" to={'/cadastroproduto_adm'}>Adicionar Novo Produto</Link>
             </div>
 
             <NavbarAdm />
@@ -66,7 +66,7 @@ function FiltroAdm() {
                     />
                 )}
 
-                <div className="bg-[#F5F4D6] flex justify-center">
+                <div className="bg-yellow-100 flex justify-center">
                     <div className="m-4 container flex flex-col">
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
                             {produtosFiltrados.map((produto) => (

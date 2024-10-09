@@ -18,7 +18,7 @@ function CardViagens({ viagem }: CardViagensProps) {
     }
 
     return (
-        <div className='border-2 border-[#2B4042] flex flex-col rounded-2xl overflow-hidden justify-between'>
+        <div className='flex flex-col justify-between border-2 border-[#2B4042] rounded-2xl overflow-hidden bg-white'>
             <h1 className='py-2 bg-[#1E765A] text-white font-bold text-2xl text-center'>
                 Destino - <span>{viagem.destino}</span>
             </h1>
@@ -53,7 +53,7 @@ function CardViagens({ viagem }: CardViagensProps) {
             <div className="flex">
 
                 <Link to={`/editarviagem_adm/${viagem.id}`}
-                    className='w-full text-slate-100 bg-emerald-500 hover:bg-emerald-800 flex items-center justify-center py-2'>
+                    className='w-full text-slate-100 bg-emerald-600 hover:bg-emerald-800 flex items-center justify-center py-2'>
                     <button>Editar</button>
                 </Link>
 

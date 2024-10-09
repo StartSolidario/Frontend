@@ -31,7 +31,7 @@ function CardCart({ item }: CardProdutosProps) {
                 </div>
             </div>
             <div className="flex flex-wrap">
-                <button className='w-1/2 text-slate-100 bg-emerald-500 hover:bg-emerald-800 border border-slate-700 
+                <button className='w-1/2 text-slate-100 bg-emerald-600 hover:bg-emerald-800 border border-slate-700 
                                    flex items-center justify-center py-2'
                     onClick={() => aumentarProduto(item.id)}>
                     <Plus size={32} />

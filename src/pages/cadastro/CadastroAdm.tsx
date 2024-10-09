@@ -87,13 +87,13 @@ function CadastroAdm() {
    }, [contador])
 
    return (
-      <div className='flex justify-center items-center bg-[#F5F4D6] py-[10Vh]'>
+      <div className='flex justify-center items-center bg-yellow-100 py-[10Vh]'>
          <div className='flex w-3/5 2xl:w-1/2 m-auto'>
             <div className='flex flex-col w-full border border-black rounded-3xl bg-[#1E765A]'>
                <div className="flex justify-center w-full h-[20%]">
                   <img onClick={AumentaContador} className="w-[100px] md:w-[125px] lg:w-[150px]" src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida.png?updatedAt=1724784792101" />
                </div>
-               <form onSubmit={cadastrarNovoUsuario} className="w-full h-full  text-[#F5F4D6]">
+               <form onSubmit={cadastrarNovoUsuario} className="w-full h-full  text-white">
                   <h2 className="text-2xl md:text-3xl flex justify-center items-center py-4">Crie sua conta:</h2>
 
                   <div className="flex flex-col w-full px-4 py-2">

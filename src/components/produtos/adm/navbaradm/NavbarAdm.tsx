@@ -26,7 +26,7 @@ function NavbarAdm() {
 
     return (
         <div className="flex flex-col justify-center items-center py-4">
-            <form onSubmit={searchHandler} className="relative flex w-[90%] md:w-3/4 lg:w-3/5 rounded-xl border-[#1E765A]">
+            <form onSubmit={searchHandler} className="flex w-[90%] md:w-3/4 lg:w-3/5 rounded-xl">
                 <input
                     className="mx-2 w-full rounded-xl border px-6 py-2 text-base font-medium outline-none placeholder:font-medium focus:border-gray-500"
                     type="search"
@@ -37,7 +37,7 @@ function NavbarAdm() {
                     onChange={(e) => setKeyWord(e.target.value)}
                 />
 
-                <button type="submit" className="bg-[#3ba886] hover:bg-[#1E765A] flex rounded-xl px-3 py-2 outline-none" aria-label="Busca">
+                <button type="submit" className="bg-emerald-600 hover:bg-emerald-800 flex rounded-xl px-3 py-2 outline-none" aria-label="Busca">
                     <MagnifyingGlass size={32} />
                 </button>
             </form>

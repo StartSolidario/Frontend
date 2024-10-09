@@ -34,7 +34,7 @@ function ListarCardComum() {
     }, [produtos.length]);
     return (
        <>
-          <div className="flex flex-col bg-[#F5F4D6]">
+          <div className="flex flex-col bg-yellow-100">
              {produtos.length === 0 && (
                 <Hourglass
                    visible={true}
@@ -47,7 +47,7 @@ function ListarCardComum() {
                 />
              )}
  
-             <div className="bg-[#F5F4D6] flex justify-center">
+             <div className="bg-yellow-100 flex justify-center">
                 <div className="my-4 container flex flex-col">
                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
                       {produtos.map((produto) => (

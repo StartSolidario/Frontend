@@ -31,14 +31,14 @@ function Login() {
    }
 
    return (
-      <div className='flex justify-center items-center min-h-[80vh] bg-[#F5F4D6]'>
+      <div className='flex justify-center items-center min-h-[80vh] bg-yellow-100'>
          <div className='flex rounded-3xl w-4/5 md:w-8/12 m-auto'>
             <div className='hidden lg:w-3/5 lg:block'>
                <img className='rounded-l-3xl w-full h-full border lg:border-2 border-r-0 lg:border-r-0 border-black' src='https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/diferentes-pessoas-fazendo-trabalho-voluntario_23-2149012164.png?updatedAt=1724776780689' />
             </div>
 
             <div className='w-full lg:w-2/5'>
-               <form className="flex flex-col justify-center items-center w-full h-full rounded-3xl lg:rounded-r-3xl lg:rounded-l-none border lg:border-2 border-black bg-[#1E765A] text-[#F5F4D6]" onSubmit={login} >
+               <form className="flex flex-col justify-center items-center w-full h-full rounded-3xl lg:rounded-r-3xl lg:rounded-l-none border lg:border-2 border-black bg-[#1E765A] text-white" onSubmit={login} >
                   <h2 className="flex justify-center justify-items-center text-2xl md:text-3xl text-center py-4">Entre na sua conta:</h2>
                   <div className="flex flex-col w-full px-4 pb-2">
                      <label htmlFor="usuario" className='px-1 text-base md:text-lg'>Usuário:</label>

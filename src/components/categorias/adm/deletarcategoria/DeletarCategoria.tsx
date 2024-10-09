@@ -68,7 +68,7 @@ function DeletarCategoria() {
     }
 
     return (
-        <div className="bg-[#F5F4D6] min-h-[80vh] py-8">
+        <div className="bg-yellow-100 min-h-[80vh] py-8">
             <div className='mx-auto w-3/4 md:w-2/4 lg:w-1/3'>
                 <h1 className='pt-8 pb-4 text-4xl text-center'>Deletar Categoria</h1>
 
@@ -91,7 +91,7 @@ function DeletarCategoria() {
                             Não
                         </button>
                         <button
-                            className='w-full text-slate-100 bg-emerald-500 hover:bg-emerald-800 flex items-center justify-center py-2'
+                            className='w-full text-slate-100 bg-emerald-600 hover:bg-emerald-800 flex items-center justify-center py-2'
                             onClick={deletarCategoria}
                         >
                             {isLoading ? <RotatingLines

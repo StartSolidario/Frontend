@@ -160,7 +160,7 @@ function FormularioProduto() {
    const carregandoCategoria = categoria.nome === '';
 
    return (
-      <div className="bg-[#F5F4D6] min-h-[80vh] py-8">
+      <div className="bg-yellow-100 min-h-[80vh] py-8">
          <div className="flex flex-col items-center mx-auto container">
             <h1 className="my-8 text-4xl text-center">
                {id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}
@@ -262,7 +262,7 @@ function FormularioProduto() {
 
                <div className="flex justify-around">
                   <button
-                     className="flex justify-center items-center w-[40%] py-2 text-slate-100 bg-emerald-500 hover:bg-emerald-800 disabled:bg-slate-500 border border-slate-700 rounded-lg"
+                     className="flex justify-center items-center w-[40%] py-2 text-slate-100 bg-emerald-600 hover:bg-emerald-800 disabled:bg-slate-500 border border-slate-700 rounded-lg"
                      type="submit"
                      disabled={carregandoCategoria}>
 

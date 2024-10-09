@@ -45,9 +45,9 @@ function ListarProdutos() {
    }, [produtos.length]);
    return (
       <>
-         <div className="flex flex-col min-h-[80vh] bg-[#F5F4D6]">
+         <div className="flex flex-col min-h-[80vh] bg-yellow-100">
             <div className="w-full flex justify-center">
-               <Link className="my-4 py-4 px-4 border-2 rounded-lg border-[#2B4042] bg-[#1E765A] text-[#F5F4D6]" to={'/cadastroproduto_adm'}>Adicionar Novo Produto</Link>
+               <Link className="my-4 py-4 px-4 border-2 rounded-lg border-[#2B4042] bg-[#1E765A] text-white" to={'/cadastroproduto_adm'}>Adicionar Novo Produto</Link>
             </div>
 
             <NavbarAdm />
@@ -64,7 +64,7 @@ function ListarProdutos() {
                />
             )}
 
-            <div className=" flex justify-center items-center bg-[#F5F4D6]">
+            <div className=" flex justify-center items-center bg-yellow-100">
                <div className="m-4 container flex flex-col">
                   <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
                      {produtos.map((produto) => (

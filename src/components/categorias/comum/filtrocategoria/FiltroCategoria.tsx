@@ -60,7 +60,7 @@ function FiltroCategoria() {
 
     if (loading) {
         return (
-            <div className="bg-[#F5F4D6] min-h-[80vh]">
+            <div className="bg-yellow-100 min-h-[80vh]">
                 <NavbarComum />
                 <Hourglass
                     visible={true}
@@ -76,11 +76,11 @@ function FiltroCategoria() {
     }
 
     return (
-        <div className="bg-[#F5F4D6] min-h-[80vh]">
+        <div className="bg-yellow-100 min-h-[80vh]">
             <NavbarComum />
 
             <div>
-                <div className="bg-[#F5F4D6] flex flex-col justify-center items-center">
+                <div className="bg-yellow-100 flex flex-col justify-center items-center">
                     <p className="text-lg md:text-xl lg:text-2xl text-white text-center font-bold w-full bg-[#1E765A] px-8 py-2">
                         Produtos da Categoria - <span>{categoria?.nome || "Nome não disponível"}</span>
                     </p>

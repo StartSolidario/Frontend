@@ -34,7 +34,7 @@ function CardViagemComum({ viagem }: CardViagensProps) {
 
                 <div>
                     <Popup
-                        trigger={<button className="text-xl font-semibold border-[#2B4042] border-2 rounded-2xl py-2 px-4 hover:bg-[#2B4042] cursor-pointer">Me Inscrever</button>} modal>
+                        trigger={<button className="text-xl font-semibold border-[#2B4042] border-2 rounded-2xl py-2 px-4 hover:bg-neutral-300 cursor-pointer">Me Inscrever</button>} modal>
                         <div>
                             <VoluntariadoForms />
                         </div>

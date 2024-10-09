@@ -56,7 +56,7 @@ function Home() {
 
    if (loading) {
       return (
-         <div className="bg-[#F5F4D6] min-h-[80vh]">
+         <div className="bg-yellow-100 min-h-[80vh]">
             <NavbarComum />
             
             <Hourglass
@@ -73,7 +73,7 @@ function Home() {
    }
 
    return (
-      <div className="bg-[#F5F4D6]">
+      <div className="bg-yellow-100">
          <NavbarComum />
 
          <div className="">            
@@ -84,7 +84,7 @@ function Home() {
                <ListaCardViagemComum />
             </div>
 
-         <div className="bg-[#F5F4D6] min-h-[80vh]">
+         <div className="bg-yellow-100 min-h-[80vh]">
             <div className="flex flex-col justify-center items-center py-8">
             <h3 className="text-xl md:text-2xl lg:text-3xl py-4 text-center "><strong>Não pode embarcar nesta jornada? Sem problemas!</strong></h3>
             <h4 className="text-xl md:text-2xl lg:text-3xl text-center">Você ainda pode contribuir para realizar futuros ao financiar a viagem de alguém.</h4>

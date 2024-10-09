@@ -6,7 +6,7 @@ function VoluntariadoForms() {
 
    return (
       <div className='border-2 rounded-2xl border-[#2B4042] bg-[#1E765A] mx-auto'>
-         <form className="w-full h-full text-[#F5F4D6] p-4" onSubmit={handleSubmit}>
+         <form className="w-full h-full text-white p-4" onSubmit={handleSubmit}>
             <h2 className="text-xl md:text-3xl text-center py-4">Formulário de Voluntariado:</h2>
 
             <div className='flex flex-col md:flex-row'>

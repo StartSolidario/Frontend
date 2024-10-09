@@ -21,7 +21,7 @@ function Navbar() {
    {
       usuario.token !== "" ?
          component = (
-            <div className="w-full min-h-[10vh] bg-[#2B4042] text-[#F5F4D6] py-3">
+            <div className="w-full min-h-[10vh] bg-[#2B4042] text-white py-3">
                <div className="flex flex-col md:flex-row justify-around items-center">
                   <div className="flex justify-center items-center w-1/2 sm:w-2/5 md:w-1/5">
                      <Link to={'/'}><img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida-with-text-double-font.png?updatedAt=1724785507618" alt="Logo do Start Solidário" /> </Link>
@@ -67,7 +67,7 @@ function Navbar() {
          )
 
          : component = (
-            <div className="flex flex-col md:flex-row justify-around items-center w-full min-h-[10vh] bg-[#2B4042] text-[#F5F4D6] py-3">
+            <div className="flex flex-col md:flex-row justify-around items-center w-full min-h-[10vh] bg-[#2B4042] text-white py-3">
                <div className="flex justify-center items-center w-1/2 sm:w-2/5 md:w-1/5">
                   <Link to={'/'}><img src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida-with-text-double-font.png?updatedAt=1724785507618" alt="Logo do Start Solidário" /> </Link>
                </div>
