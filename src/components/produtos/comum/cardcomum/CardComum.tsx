@@ -11,7 +11,7 @@ function CardComum({ prod }: CardProdutosProps) {
     const { adicionarProduto } = useContext(CartContext)
 
     return (
-        <div className='flex flex-col border-2 border-[#1E765A] rounded-2xl bg-white h-[80vh]'>
+        <div className='flex flex-col border-2 border-[#1E765A] rounded-2xl bg-white h-[60vh] md:h-[75vh]'>
             <div className="flex flex-col justify-center items-center h-full">
                 <div className="w-[75%] h-[50%] bg-[#1E765A] my-4">
                     <img src={prod.foto} className='w-full h-full p-1' alt="Imagem Produto" />

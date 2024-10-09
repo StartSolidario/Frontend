@@ -77,7 +77,7 @@ function Home() {
          <NavbarComum />
 
          <div className="">            
-            <h2 className="text-xl md:text-3xl lg:text-4xl text-center font-bold pt-4 text-gray-800"> Start Solidário: Unidos para Erradicar a Pobreza</h2>
+            <h2 className="text-xl md:text-3xl lg:text-4xl text-center font-bold pt-6 text-gray-800"> Start Solidário: Unidos para Erradicar a Pobreza</h2>
             <p className="text-base md:text-lg lg:text-xl pt-4 pb-4 text-center py-6 text-gray-700">Você deseja ser parte da transformação? Explore nossas missões atuais e faça a diferença hoje mesmo:</p></div>
 
             <div className="flex justify-center items-center text-center w-full lg:w-4/5 mx-auto">

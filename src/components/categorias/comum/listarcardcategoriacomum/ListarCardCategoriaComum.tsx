@@ -38,7 +38,7 @@ function ListarCardCategoriaComum() {
                 </div>
             </div>
         </>
-    );
+    )
 }
 
 export default ListarCardCategoriaComum;
