@@ -31,7 +31,7 @@ function EquipeContato() {
                     </form>
                 </div>
                 <div className="hidden lg:flex justify-center item-center lg:w-1/4 border border-l-0 rounded-r-lg border-black">
-                    <img className="w-full" src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/startsolidariosfundo.png" alt="logo StartSolidário" ></img>
+                    <img className="w-full" src="https://ik.imagekit.io/startsolidario/STARTSOLIDARIO/Logo-Estendida.png?updatedAt=1724784792101" alt="logo StartSolidário" ></img>
                 </div>
             </div>
 
